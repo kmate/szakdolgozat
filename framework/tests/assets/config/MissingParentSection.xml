@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<configuration xmlns="urn:fw-configuration">
+	<!-- missing parent section -->
+	<section name="test" inherits="testParent">
+		<key1>value1</key1>
+	</section>
+</configuration>

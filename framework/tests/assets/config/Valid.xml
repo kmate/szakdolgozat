@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<configuration xmlns="urn:fw-configuration">
+	<!-- valid xml configuration -->
+	<section name="test">
+		<key1>value1</key1>
+	</section>
+	<section name="development" inherits="test">
+		<key2>value2a</key2>
+	</section>
+	<section name="production" inherits="development" key2="value2b">
+		<key3>
+			value3
+		</key3>
+		<key4>
+			<key5 key6="value6"/>
+			<key7>value7</key7>
+		</key4>
+	</section>
+</configuration>

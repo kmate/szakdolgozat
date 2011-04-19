@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false" bootstrap="bootstrap.php">
+	<testsuites>
+		<testsuite name="Framework">
+			<directory suffix="Test.php">tests</directory>
+		</testsuite>
+	</testsuites>
+	
+	<php>
+		<const name="TEST_ASSETS_PATH" value="tests/assets"/>
+	</php>
+	
+	<logging>
+		<log
+			type="coverage-html"
+			target="coverage"
+			title="Framework"
+			highlight="true"/>
+	</logging>
+	
+	<filter>
+		<whitelist addUncoveredFilesFromWhitelist="true">
+			<directory suffix=".php">classes</directory>
+			<exclude>
+				<file>classes/Utils.php</file>
+			</exclude>
+		</whitelist>
+	</filter>
+</phpunit>
