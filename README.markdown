@@ -1,7 +1,7 @@
 Szakdolgozat
 ============
 
-A dolgozat új verzióit a `szakdolgozat.pdf` fájl frissítésével teszem közzé.
+A dolgozat új verzióit a `szakdolgozat.pdf` fájl frissítésével teszem közzé. A forráskódokat a szakdolgozat hátuljába kötve, DVD lemezen mellékelem egy előtelepített vitruális géppel együtt (`Oracle VirtualBox` szoftverhez: `http://www.virtualbox.org/`), mely biztosítja a futtatókörnyezetet az alkalmazás és a tesztek számára.
 
 Keretrendszer
 =============
