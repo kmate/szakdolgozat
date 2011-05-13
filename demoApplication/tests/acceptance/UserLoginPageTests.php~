@@ -1,0 +1,42 @@
+<?php
+
+namespace app\tests\acceptance;
+
+use \PHPUnit_Extensions_SeleniumTestCase;
+
+class LoginPageTests extends PHPUnit_Extensions_SeleniumTestCase
+{
+   // protected $coverageScriptUrl = 'http://localhost/phpunit_coverage.php';
+    
+    public function setUp()
+    {
+        $this->setBrowser('*firefox');
+        $this->setBrowserUrl(TEST_BASE_URL);
+    }
+    
+    public function testInitialLayout()
+    {
+        $this->open('user/login');
+        try {
+            $this->assertTrue($this->isElementPresent("userName"));
+        } catch (PHPUnit_Framework_AssertionFailedError $e) {
+            array_push($this->verificationErrors, $e->toString());
+        }
+        try {
+            $this->assertTrue($this->isElementPresent("password"));
+        } catch (PHPUnit_Framework_AssertionFailedError $e) {
+            array_push($this->verificationErrors, $e->toString());
+        }
+        try {
+            $this->assertTrue($this->isElementPresent("login"));
+        } catch (PHPUnit_Framework_AssertionFailedError $e) {
+            array_push($this->verificationErrors, $e->toString());
+        }
+        try {
+            $this->assertTrue($this->isElementPresent("link=Regisztráció"));
+        } catch (PHPUnit_Framework_AssertionFailedError $e) {
+            array_push($this->verificationErrors, $e->toString());
+        }
+        $this->verifyTextPresent("Bejelentkezés");
+    }
+}

@@ -1,0 +1,17 @@
+<?php $view->getLayoutTemplate()->subTitle = 'Új feladat'; ?>
+<h1>Új feladat</h1>
+<p class="center">Az új feladat hozzáadása sikeres.</p>
+<table class="twoChoice">
+  <tr class="separator">
+    <td>
+      <a href="<?php echo $this->view->generateLink('task', 'view', array('taskId' => $taskId)) ?>">
+      Megtekintés
+      </a>
+    </td>
+    <td>
+      <a href="<?php echo $this->view->generateLink('task', 'list') ?>">
+      Vissza a feladatlistához
+      </a>
+    </td>
+  </tr>
+</table>

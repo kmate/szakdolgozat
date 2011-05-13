@@ -1,0 +1,18 @@
+<?php $view->getLayoutTemplate()->subTitle = 'Felhasználói adatlap'; ?>
+<h1>Felhasználói adatlap</h1>
+<table>
+  <tr>
+    <th class="right"><label for="fullName">Teljes név:</label></th>
+    <td><?php echo $user->full_name; ?></td>
+  </tr>
+  <tr>
+    <th class="right"><label for="email">E-mail cím:</label></th>
+    <td><?php echo $user->email; ?></td>
+  </tr>
+  <tr class="separator">
+    <td>&nbsp;</td>
+    <td colspan="2">
+      <a href="<?php echo $this->view->generateLink('task', 'list') ?>">Vissza</a>
+    </td>
+  </tr>
+</table>

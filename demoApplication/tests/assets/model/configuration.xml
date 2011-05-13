@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration xmlns="urn:fw-configuration">
+	<section name="default">
+		<model>
+			<datasources default="test_data_source">
+				<test_data_source
+					dsn="mysql:host=127.0.0.1;port=3306;dbname=demoApplicationTest"
+					username="demoTestUser"
+					password="demoTestPassword"/>
+			</datasources>
+		</model>
+	</section>
+</configuration>

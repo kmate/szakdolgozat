@@ -1,0 +1,56 @@
+<?php $view->getLayoutTemplate()->subTitle = 'Regisztráció'; ?>
+<h1>Regisztráció</h1>
+<?php if ($showUserNameError): ?>
+<p class="validationError">A megadott felhasználónév már foglalt!<p>
+<?php endif; ?>
+<?php if ($showEmailError): ?>
+<p class="validationError">A megadott e-mail cím már foglalt!<p>
+<?php endif; ?>
+<form action="<?php echo $this->view->generateLink('user', 'register') ?>" method="post">
+  <table>
+    <tr>
+      <th><label for="userName">Felhasználónév:</label></th>
+      <td><input type="text" id="userName" name="userName" value="<?php echo $parameters->get('userName', ''); ?>"/></td>
+    </tr>
+    <?php
+      echo $this->view->getValidationResultRow(
+        $validationErrors,
+        'userName',
+        'Csak ékezetmentes kis- és nagybetűk illetve számjegyek megengedettek!'
+      );
+    ?>
+    <tr>
+      <th><label for="fullName">Teljes név:</label></th>
+      <td><input type="text" id="fullName" name="fullName" value="<?php echo $parameters->get('fullName', ''); ?>"/></td>
+    </tr>
+    <?php echo $this->view->getValidationResultRow($validationErrors, 'fullName'); ?>
+    <tr>
+      <th><label for="email">E-mail cím:</label></th>
+      <td><input type="text" id="email" name="email" value="<?php echo $parameters->get('email', ''); ?>"/></td>
+    </tr>
+    <?php echo $this->view->getValidationResultRow($validationErrors, 'email'); ?>
+    <tr>
+      <th><label for="password">Jelszó:</label></th>
+      <td><input type="password" id="password" name="password"/></td>
+    </tr>
+    <?php
+      echo $this->view->getValidationResultRow(
+        $validationErrors,
+        'password',
+        'Csak kis- és nagybetűk, számjegyek és az alábbi karakterek megengedettek: ! ? ; : . _ - + = % &amp; #'
+      );
+    ?>
+    <tr>
+      <th><label for="password2">Jelszó ismét:</label></th>
+      <td><input type="password" id="password2" name="password2"/></td>
+    </tr>
+    <?php echo $this->view->getValidationResultRow($validationErrors, 'password2'); ?>
+    <tr class="separator">
+      <td>&nbsp;</td>
+      <td>
+        <input type="submit" name="register" value="Regisztráció"/>
+        vagy <a href="<?php echo $this->view->generateLink('user', 'login'); ?>">Bejelentkezés</a>
+      </td>
+    </tr>
+  </table>
+</form>

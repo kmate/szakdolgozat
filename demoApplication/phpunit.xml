@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false" bootstrap="bootstrap.php">
+	<testsuites>
+		<testsuite name="Demo Application Acceptance Tests">
+			<directory suffix="Test.php">tests/acceptance</directory>
+		</testsuite>
+		<testsuite name="Demo Application Model Unit Tests">
+			<directory suffix="Test.php">tests/model</directory>
+		</testsuite>
+	</testsuites>
+	
+	<php>
+		<const name="TEST_ASSETS_PATH" value="tests/assets"/>
+		<const name="TEST_SESSION_NAME" value="DEMO_SESSION"/>
+		<const name="TEST_BASE_URL" value="http://localhost/index.php/"/>
+	</php>
+	
+	<selenium>
+		<browser name="Firefox"
+			browser="*firefox"
+			host="localhost"
+			port="4444"
+			timeout="30000"/>
+	</selenium>
+	
+	<logging>
+		<log
+			type="coverage-html"
+			target="coverage"
+			title="Demo Application"
+			highlight="true"/>
+		<log
+			type="testdox-html"
+			target="testdox/index.html"/>
+	</logging>
+	
+	<filter>
+		<whitelist addUncoveredFilesFromWhitelist="true">
+			<directory suffix=".php">classes</directory>
+		</whitelist>
+	</filter>
+</phpunit>

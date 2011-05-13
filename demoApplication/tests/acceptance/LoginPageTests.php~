@@ -1,0 +1,14 @@
+<?php
+
+namespace app\tests\acceptance;
+
+use \PHPUnit_Extensions_SeleniumTestCase;
+
+class LoginPageTests extends PHPUnit_Extensions_SeleniumTestCase
+{
+    public function setUp()
+    {
+        $this->setBrowserUrl(TEST_BASE_URL);
+        $this->open('user/login');
+    }
+}

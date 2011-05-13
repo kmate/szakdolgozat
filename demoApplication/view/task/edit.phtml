@@ -1,0 +1,126 @@
+<?php
+  use \app\model\Task;
+  
+  $view->getLayoutTemplate()->subTitle    = 'Feladat szerkesztése';
+  $view->getLayoutTemplate()->extraScript = 'task.form';
+?>
+<h1>Feladat szerkesztése</h1>
+<form
+  action="<?php echo $this->view->generateLink('task', 'edit', array('taskId' => $task->id)) ?>"
+  method="post">
+  <table>
+    <tr>
+      <th><label for="title">Cím:</label></th>
+      <td>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          value="<?php echo $parameters->get('title', $task->title); ?>"/>
+        </td>
+    </tr>
+    <?php echo $this->view->getValidationResultRow($validationErrors, 'title'); ?>
+    <tr>
+      <th><label for="description">Leírás:</label></th>
+      <td>
+        <textarea
+          id="description"
+          name="description"
+          rows="8"><?php echo nl2br($parameters->get('description', $task->description ?: '')); ?></textarea>
+      </td>
+    </tr>
+    <?php echo $this->view->getValidationResultRow($validationErrors, 'description'); ?>
+    <tr>
+      <th><label for="start">Kezdés:</label></th>
+      <td>
+        <input
+          type="text"
+          id="start"
+          name="start"
+          <?php if (false !== ($finishDate = strtotime($parameters->get('start', $task->start)))): ?>
+          value="<?php echo date('Y. m. d.', $finishDate); ?>"
+          <?php endif; ?>
+      </td>
+    </tr>
+    <?php
+      echo $this->view->getValidationResultRow(
+        $validationErrors,
+        'start',
+        'Az elfogadott formátum: ÉÉÉÉ. HH. NN.'
+      );
+    ?>
+    <tr>
+      <th><label for="finish">Befejezés:</label></th>
+      <td>
+        <input
+          type="text"
+          id="finish"
+          name="finish"
+          <?php if (false !== ($finishDate = strtotime($parameters->get('finish', $task->finish)))): ?>
+          value="<?php echo date('Y. m. d.', $finishDate); ?>"
+          <?php endif; ?>
+      </td>
+    </tr>
+    <?php
+      echo $this->view->getValidationResultRow(
+        $validationErrors,
+        'finish',
+        'Az elfogadott formátum: ÉÉÉÉ. HH. NN.'
+      );
+    ?>
+    <tr>
+      <th>Prioritás:</th>
+      <td>
+        <input
+          type="radio"
+          id="priority_low"
+          name="priority"
+          value="<?php echo Task::PRIORITY_LOW; ?>"
+          <?php if (Task::PRIORITY_LOW == $parameters->get('priority', $task->priority)): ?>
+          checked="checked"
+          <?php endif; ?>/>
+        <label for="priority_low">alacsony</label><br/>
+        <input
+          type="radio"
+          id="priority_normal"
+          name="priority"
+          value="<?php echo Task::PRIORITY_NORMAL; ?>"
+          <?php if (Task::PRIORITY_NORMAL == $parameters->get('priority', $task->priority)): ?>
+          checked="checked"
+          <?php endif; ?>/>
+        <label for="priority_normal">normál</label><br/>
+        <input
+          type="radio"
+          id="priority_high"
+          name="priority"
+          value="<?php echo Task::PRIORITY_HIGH; ?>"
+          <?php if (Task::PRIORITY_HIGH == $parameters->get('priority', $task->priority)): ?>
+          checked="checked"
+          <?php endif; ?>/>
+        <label for="priority_high">magas</label>
+      </td>
+    </tr>
+    <?php echo $this->view->getValidationResultRow($validationErrors, 'priority'); ?>
+    <tr>
+      <th>Publikus:</th>
+      <td>
+        <input
+          type="checkbox"
+          id="is_public"
+          name="is_public"
+          <?php if (!$parameters->has('update') ? $task->is_public : ('on' === $parameters->get('is_public', ''))): ?>
+          checked="checked"
+          <?php endif; ?>/>
+        <label for="is_public">igen</label>
+      </td>
+    </tr>
+    <?php echo $this->view->getValidationResultRow($validationErrors, 'is_public'); ?>
+    <tr class="separator">
+    <td>&nbsp;</td>
+      <td>
+        <input type="submit" name="update" value="Mentés"/>
+        vagy <a href="<?php echo $this->view->generateLink('task', 'list') ?>">vissza a listához</a>
+      </td>
+    </tr>
+  </table>
+</form>

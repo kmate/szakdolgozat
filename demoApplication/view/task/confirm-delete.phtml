@@ -1,0 +1,12 @@
+<h1>Feladat törlése</h1>
+<p class="center">Biztosan törli a kiválasztott feladatot?</p>
+<table class="twoChoice">
+  <tr class="separator">
+    <td>
+      <a href="<?php echo $this->view->generateLink('task', 'delete', array('taskId' => $taskId)); ?>">Igen</a>
+    </td>
+    <td>
+      <a href="<?php echo $this->view->generateLink('task', 'list'); ?>">Mégsem</a>
+    </td>
+  </tr>
+</table>

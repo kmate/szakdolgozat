@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dataset>
+	<!-- users -->
+	<user
+		id="1"
+		name="test1"
+		full_name="Teszt Felhasználó"
+		email="test@localhost.hu"
+		password="f84aaea2797117edbcdfd8cd782a719c09c05e86e16fc5e9e5"/>
+	
+	<user
+		id="2"
+		name="test2"
+		full_name="Második Teszt Felhasználó"
+		email="test2@localhost.hu"
+		password="d2eb5ed4aa70e52e861c51156710a0ce86c03c38bae789f992"/>
+	
+	<user
+		id="3"
+		name="test3"
+		full_name="Harmadik Teszt Felhasználó"
+		email="test3@localhost.hu"
+		password="6b99e0bc571965ad4473a4be44406ad1351e5eecf6751c6886"/>
+	
+	<!-- tasks -->
+	<task
+		id="1"
+		user_id="1"
+		title="Feladat 1"
+		description="Leírás 1"
+		start="2011-02-11"
+		finish="2011-03-12"
+		priority="low"
+		is_public="1"/>
+	
+	<task
+		id="2"
+		user_id="3"
+		title="Feladat 2"
+		description="Leírás 2"
+		start="2011-05-02"
+		finish="2011-04-30"
+		priority="low"
+		is_public="0"/>
+	
+	<task
+		id="3"
+		user_id="3"
+		title="Feladat 3"
+		start="2011-03-23"
+		finish="2011-04-02"
+		priority="high"
+		is_public="0"/>
+	
+	<task
+		id="4"
+		user_id="2"
+		title="Feladat 4"
+		description="Leírás 4"
+		start="2011-01-02"
+		finish="2011-01-04"
+		priority="normal"
+		is_public="1"/>
+	
+	<task
+		id="5"
+		user_id="3"
+		title="Feladat 5"
+		start="2011-05-02"
+		finish="2011-05-02"
+		priority="normal"
+		is_public="1"/>
+	
+	<task
+		id="6"
+		user_id="2"
+		title="Feladat 6"
+		description="Leírás 6"
+		start="2011-02-01"
+		finish="2011-02-10"
+		priority="normal"
+		is_public="1"/>
+	
+	<task
+		id="7"
+		user_id="1"
+		title="Feladat 7"
+		start="2011-04-21"
+		finish="2011-04-25"
+		priority="low"
+		is_public="0"/>
+	
+	<task
+		id="8"
+		user_id="1"
+		title="Feladat 8"
+		start="2011-05-01"
+		finish="2011-05-01"
+		priority="normal"
+		is_public="1"/>
+	
+	<task
+		id="9"
+		user_id="2"
+		title="Feladat 9"
+		description="Leírás 9"
+		start="2011-05-05"
+		finish="2011-05-07"
+		priority="high"
+		is_public="0"/>
+	
+	<task
+		id="10"
+		user_id="1"
+		title="Feladat 10"
+		start="2011-02-14"
+		finish="2011-02-14"
+		priority="normal"
+		is_public="1"/>
+	
+	<task
+		id="11"
+		user_id="1"
+		title="Feladat 11"
+		description="Leírás 11"
+		start="2011-03-12"
+		finish="2011-04-21"
+		priority="normal"
+		is_public="1"/>
+	
+	<task
+		id="12"
+		user_id="1"
+		title="Feladat 12"
+		start="2011-04-11"
+		finish="2011-04-24"
+		priority="high"
+		is_public="1"/>
+</dataset>

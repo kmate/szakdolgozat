@@ -1,0 +1,11 @@
+<h1>Hiba történt a kiszolgálás közben.</h1>
+
+<?php if ($debugEnabled): ?>
+<h2>
+<?php echo get_class($exception); ?> (<?php echo $exception->getCode(); ?>):
+<?php echo $exception->getMessage(); ?>
+</h2>
+<pre>
+<?php echo $exception->getTraceAsString() ?>
+</pre>
+<?php endif; ?>

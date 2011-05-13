@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="hu">
+  <head>
+    <!--
+     ###################################
+     #  Karácsony Máté (KAMPAAI.ELTE)  #
+     #           2011. május           #
+     ###################################
+    -->
+    <base href="<?php echo $this->view->getBaseHref() ?>"/>
+    <title><?php echo $title . (!empty($subTitle) ? ' &ndash; ' . $subTitle : ''); ?></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Language" content="hu"/>
+    <meta name="country" content="Hungary"/>
+    <meta name="language" content="hu"/>
+    <meta name="author" content="Karácsony Máté"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/datepicker.css"/>
+    <script type="text/javascript" src="assets/js/jquery-1.6.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.jsonrpc.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.tmpl.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.ui.datepicker.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.ui.datepicker-hu.js"></script>
+    <?php if(!empty($extraScript)): ?>
+    <script type="text/javascript" src="assets/js/<?php echo $extraScript; ?>.js"></script>
+    <?php endif; ?>
+  </head>
+  <body>
+    <div id="container">
+    <div id="header">
+      <?php if (isset($user)): ?>
+      <div id="userInfo">
+        Bejelentkezve: <em><?php echo $user->full_name ?></em><br/>
+        <a href="<?php echo $this->view->generateLink('user', 'logout'); ?>">Kijelentkezés</a>
+      </div>
+      <?php endif; ?>
+    </div>
+    <?php echo $layoutContents; ?>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+<?php
+  $pageParam     = $listId . 'ListPage';
+  $tableId       = $listId . 'List';
+  $prevLinkId    = $listId . 'ListPrevLink';
+  $nextLinkId    = $listId . 'ListNextLink';
+  $currentPageId = $listId . 'ListCurrentPage';
+  $totalPagesId  = $listId . 'ListTotalPages';
+?>
+<table id="<?php echo $tableId; ?>" class="bordered">
+  <thead>
+  <tr>
+    <th class="left">Cím</th>
+    <th class="right">Kezdés</th>
+    <th class="right">Befejezés</th>
+    <th class="center">Prioritás</th>
+    <?php if ($editable): ?>
+    <th class="center">Publikus</th>
+    <th class="center" colspan="2">Műveletek</th>
+    <?php else: ?>
+    <th class="right">Felhasználó</th>
+    <?php endif; ?>
+  </tr>
+  </thead>
+  <tbody>
+  <?php
+    if (0 == count($tasks)):
+  ?>
+  <tr><td colspan="7">Nincs megjelenítendő elem.</td></tr>
+  <?php
+    else:
+    
+    for ($i = 0; $i < count($tasks); ++$i): $task = $tasks[$i];
+  ?>
+  <tr>
+    <td class="left">
+    <a href="<?php echo $this->view->generateLink('task', 'view', array('taskId' => $task->id)); ?>">
+    <?php echo $task->title; ?>
+    </a>
+    </td>
+    <td class="right"><?php echo date('Y. m. d.', strtotime($task->start)); ?></td>
+    <td class="right"><?php echo date('Y. m. d.', strtotime($task->finish)); ?></td>
+    <td class="center priority_<?php echo $task->priority; ?>">
+    <?php
+      
+      switch ($task->priority)
+      {
+        case \app\model\Task::PRIORITY_LOW:
+          echo 'alacsony';
+          break;
+        
+        default:
+        case \app\model\Task::PRIORITY_NORMAL:
+          echo 'normál';
+          break;
+        
+        case \app\model\Task::PRIORITY_HIGH:
+          echo 'magas';
+          break;
+      }
+      
+    ?>
+    </td>
+    <?php if ($editable): ?>
+    <td class="center"><?php if ($task->is_public): ?>igen<?php else: ?>nem<?php endif; ?></td>
+    <td class="center">
+      <a href="<?php echo $this->view->generateLink('task', 'edit', array('taskId' => $task->id)); ?>">
+      szerkesztés
+      </a>
+    </td>
+    <td class="center">
+      <a href="<?php echo $this->view->generateLink('task', 'confirm-delete', array('taskId' => $task->id)); ?>">
+      törlés
+      </a>
+    </td>
+    <?php else: ?>
+    <td class="right">
+       <a href="<?php echo $this->view->generateLink('user', 'view', array('userId' => $task->user_id)); ?>">
+         <?php echo $task->user_full_name; ?>
+      </a>
+    </td>
+    <?php endif; ?>
+  </tr>
+  <?php
+    endfor;
+    endif;
+  ?>
+  </tbody>
+</table>
+<table class="pager">
+  <tr>
+    <td id="<?php echo $prevLinkId; ?>Parent" class="left">
+    <?php if (1 < $currentPage): ?>
+    <a id="<?php echo $prevLinkId; ?>"
+       href="<?php echo $this->view->generateLink('task', 'list', array($pageParam => $currentPage - 1)); ?>">
+      &laquo; előző oldal
+    </a>
+    <?php endif; ?>
+    </td>
+    <td class="center">
+    <span id="<?php echo $currentPageId; ?>"><?php echo $currentPage; ?></span> / 
+    <span id="<?php echo $totalPagesId; ?>"><?php echo $totalPages; ?></span> oldal
+    </td>
+    <td id="<?php echo $nextLinkId; ?>Parent" class="right">
+    <?php if ($currentPage < $totalPages): ?>
+    <a id="<?php echo $nextLinkId; ?>"
+       href="<?php echo $this->view->generateLink('task', 'list', array($pageParam => $currentPage + 1)); ?>">
+      következő oldal &raquo;
+    </a>
+    <?php endif; ?>
+    </td>
+  </tr>
+</table>
+
+<script id="<?php echo $listId; ?>ListItemTemplate" type="text/x-jquery-tmpl">
+  <tr>
+    <td class="left">
+    <a href="<?php echo $this->view->generateLink('task', 'view', array('taskId' => '${task.id}')); ?>">
+    ${task.title}
+    </a>
+    </td>
+    <td class="right">${formatDate(task.start)}</td>
+    <td class="right">${formatDate(task.finish)}</td>
+    <td class="center priority_${task.priority}">
+      {{if 'low' == task.priority}}alacsony{{else 'high' == task.priority}}magas{{else}}normál{{/if}}
+    </td>
+    {{if editable}}
+    <td class="center">{{if 1 == task.is_public}}igen{{else}}nem{{/if}}</td>
+    <td class="center">
+      <a href="<?php echo $this->view->generateLink('task', 'edit', array('taskId' => '${task.id}')); ?>">
+        szerkesztés
+      </a>
+    </td>
+    <td class="center">
+      <a href="<?php echo $this->view->generateLink('task', 'confirm-delete', array('taskId' => '${task.id}')); ?>">
+        törlés
+      </a>
+    </td>
+    {{else}}
+    <td class="right">
+      <a href="<?php echo $this->view->generateLink('user', 'view', array('userId' => '${task.user_id}')); ?>">
+        ${task.user_full_name}
+      </a>
+    </td>
+    {{/if}}
+  </tr>
+</script>
+
+<script id="<?php echo $listId; ?>ListErrorTemplate" type="text/x-jquery-tmpl">
+  <tr>
+    <td colspan="{{if editable}}6{{else}}5{{/if}}">Hiba történt az adatok betöltésekor.</td>
+  </tr>
+</script>
+
+<script id="<?php echo $listId; ?>ListPrevLinkTemplate" type="text/x-jquery-tmpl">
+  <a id="<?php echo $prevLinkId; ?>"
+     href="<?php echo $this->view->generateLink('task', 'list', array($pageParam => '${prevPage}')); ?>">
+    &laquo; előző oldal
+  </a>
+</script>
+
+<script id="<?php echo $listId; ?>ListNextLinkTemplate" type="text/x-jquery-tmpl">
+  <a id="<?php echo $nextLinkId; ?>"
+     href="<?php echo $this->view->generateLink('task', 'list', array($pageParam => '${nextPage}')); ?>">
+    következő oldal &raquo;
+  </a>
+</script>

@@ -1,0 +1,6 @@
+Order allow,deny
+Deny from all
+
+<FilesMatch "^(|index\.php|php_coverage\.php)$">
+    Allow from all
+</FilesMatch>

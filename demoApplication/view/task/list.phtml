@@ -1,0 +1,32 @@
+<?php
+  $view->getLayoutTemplate()->subTitle    = 'Feladatok';
+  $view->getLayoutTemplate()->extraScript = 'task.list';
+?>
+<h1>Feladatok</h1>
+<h2>Saját feladatok</h2>
+<p><a href="<?php echo $this->view->generateLink('task', 'new'); ?>">Új feladat</a></p>
+<?php
+  $tasks = $taskModel->getTasksByUserId($user->id, ($ownListPage - 1) * $tasksPerPage, $tasksPerPage);
+  
+  $tableTemplate              = $view->createTemplate('task/list_table');
+  $tableTemplate->view        = $this->view;
+  $tableTemplate->tasks       = $tasks;
+  $tableTemplate->editable    = true;
+  $tableTemplate->currentPage = $ownListPage;
+  $tableTemplate->totalPages  = $ownTotalPages;
+  $tableTemplate->listId      = 'own';
+  echo $tableTemplate->evaluate(true);
+?>
+<h2>Más felhasználók megosztott feladatai</h2>
+<?php
+  $tasks = $taskModel->getOtherUsersPublicTasks($user->id, ($publicListPage - 1) * $tasksPerPage, $tasksPerPage);
+  
+  $tableTemplate              = $view->createTemplate('task/list_table');
+  $tableTemplate->view        = $this->view;
+  $tableTemplate->tasks       = $tasks;
+  $tableTemplate->editable    = false;
+  $tableTemplate->currentPage = $publicListPage;
+  $tableTemplate->totalPages  = $publicTotalPages;
+  $tableTemplate->listId      = 'public';
+  echo $tableTemplate->evaluate(true);
+?>

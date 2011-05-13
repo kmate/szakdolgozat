@@ -1,0 +1,66 @@
+<?php $view->getLayoutTemplate()->subTitle = 'Feladat megtekintése'; ?>
+<h1>Feladat megtekintése</h1>
+<table>
+  <?php if ($showUser): ?>
+  <tr>
+    <th class="right"><label for="title">Felhasználó:</label></th>
+    <td><?php echo $task->user_full_name; ?></td>
+  </tr>
+  <?php endif; ?>
+  <tr>
+    <th class="right"><label for="title">Cím:</label></th>
+    <td><?php echo $task->title; ?></td>
+  </tr>
+  <tr>
+    <th class="right"><label for="description">Leírás:</label></th>
+    <td>
+    <?php
+      echo !empty($task->description)
+        ? nl2br(strtr($task->description, array('&#13;' => chr(13), '&#10;' => chr(10))), true)
+        : '&ndash;';
+    ?>
+    </td>
+  </tr>
+  <tr>
+    <th class="right"><label for="start">Kezdés:</label></th>
+    <td><?php echo date('Y. m. d.', strtotime($task->start)); ?></td>
+  </tr>
+  <tr>
+    <th class="right"><label for="finish">Befejezés:</label></th>
+    <td><?php echo date('Y. m. d.', strtotime($task->finish)); ?></td>
+  </tr>
+  <tr>
+    <th class="right">Prioritás:</th>
+    <td>
+    <?php
+      
+      switch ($task->priority)
+      {
+        case \app\model\Task::PRIORITY_LOW:
+          echo 'alacsony';
+          break;
+        
+        default:
+        case \app\model\Task::PRIORITY_NORMAL:
+          echo 'normál';
+          break;
+        
+        case \app\model\Task::PRIORITY_HIGH:
+          echo 'magas';
+          break;
+      }
+      
+    ?>
+    </td>
+  </tr>
+  <tr>
+    <th class="right">Publikus:</th>
+    <td><?php if ($task->is_public): ?>igen<?php else: ?>nem<?php endif; ?></td>
+  </tr>
+  <tr class="separator">
+    <td>&nbsp;</td>
+    <td colspan="2">
+      <a href="<?php echo $this->view->generateLink('task', 'list') ?>">Vissza a listához</a>
+    </td>
+  </tr>
+</table>
