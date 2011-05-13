@@ -97,7 +97,14 @@ class IniConfiguration extends FileBasedConfiguration
                 }
             }
             
-            $transformedData[$key] = $value;
+            if (isset($transformedData[$key]))
+            {
+                $transformedData[$key] = array_replace_recursive($transformedData[$key], $value);
+            }
+            else
+            {
+                $transformedData[$key] = $value;
+            }
         }
         
         return $transformedData;

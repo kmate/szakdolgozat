@@ -94,5 +94,6 @@ class XmlConfigurationTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('value2b', $xmlConfiguration->key2);
         $this->assertEquals('value3',  $xmlConfiguration->key3);
         $this->assertEquals('value6',  $xmlConfiguration->key4->key5->key6);
+        $this->assertEquals('value7',  $xmlConfiguration->key4->key7);
     }
 }

@@ -24,9 +24,9 @@ class KeyValueStorageTest extends PHPUnit_Framework_TestCase
         $this->assertFalse(isset($this->_storage->NonexistentKey));
     }
     
-    public function testGetReturnsNullForNonexistentKey()
+    public function testGetReturnsStorageForNonexistentKey()
     {
-        $this->assertNull($this->_storage->get('NonexistentKey'));
+        $this->assertEquals(new KeyValueStorage(), $this->_storage->get('NonexistentKey'));
     }
     
     public function testGetWithDefaultValue()
@@ -155,6 +155,48 @@ class KeyValueStorageTest extends PHPUnit_Framework_TestCase
                         )
                     )
                 )
+            )
+        );
+    }
+    
+    /**
+     * @dataProvider maxDepthArrayProvider
+     */
+    public function testCanBeConvertedToArrayWithMaxDepth(array $array, $maxDepth)
+    {
+        $arrayWrapperStorage = new KeyValueStorage($array);
+        
+        $this->assertEquals($array, $arrayWrapperStorage->toArray($maxDepth));
+    }
+    
+    public function maxDepthArrayProvider()
+    {
+        return array(
+            array(
+                array(
+                    'key1' => array(
+                        'key2' => 'value2'
+                    )
+                ),
+                0
+            ),
+            array(
+                array(
+                    'key1' => array(
+                        'key2' => new KeyValueStorage()
+                    )
+                ),
+                1
+            ),
+            array(
+                array(
+                    'key1' => array(
+                        'key2' => array(
+                            'key3' => new KeyValueStorage()
+                        )
+                    )
+                ),
+                2
             )
         );
     }

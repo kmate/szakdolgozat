@@ -73,46 +73,34 @@ class ClassLoaderTest extends PHPUnit_Framework_TestCase
     {
         $this->setUpAutoClassLoaderWithClassPathAndDefaultNamespace(TEST_ASSETS_PATH, '');
         
-        $this->assertClassLoaded('\AClass');
+        $this->assertClassLoaded('\\AClass');
     }
     
     public function testLoadExistingClassInGlobalNamespaceAsSlash()
     {
         $this->setUpAutoClassLoaderWithClassPathAndDefaultNamespace(TEST_ASSETS_PATH, '\\');
         
-        $this->assertClassLoaded('\BClass');
+        $this->assertClassLoaded('\\BClass');
     }
     
     public function testLoadExistingClassInDefaultNamespace()
     {
-        $this->setUpAutoClassLoaderWithClassPathAndDefaultNamespace(TEST_ASSETS_PATH, 'tests\assets');
+        $this->setUpAutoClassLoaderWithClassPathAndDefaultNamespace(TEST_ASSETS_PATH, 'tests\\assets');
         
-        $this->assertClassLoaded('\tests\assets\CClass');
+        $this->assertClassLoaded('\\tests\\assets\\CClass');
     }
     
     public function testLoadExistingClassInDefaultNamespace2()
     {
         $this->setUpAutoClassLoaderWithClassPathAndDefaultNamespace(__DIR__, '');
         
-        $this->assertClassLoaded('\assets\DClass');
+        $this->assertClassLoaded('\\assets\\DClass');
     }
     
     public function testClassOutsideDefaultNamespaceWillNotBeLoaded()
     {
-        $this->setUpAutoClassLoaderWithClassPathAndDefaultNamespace(TEST_ASSETS_PATH, 'tests\assets');
+        $this->setUpAutoClassLoaderWithClassPathAndDefaultNamespace(TEST_ASSETS_PATH, 'tests\\assets');
         
-        $this->assertFalse(class_exists('\it\will\not\load\this\Class'));
-    }
-    
-    /**
-     * @expectedException        \fw\ClassLoaderException
-     * @expectedExceptionCode    0
-     * @expectedExceptionMessage Unable to load class 'NonexistentClass'
-     */
-    public function testExceptionThrownOnNonexistentClass()
-    {
-        $this->setUpAutoClassLoader();
-        
-        new \NonexistentClass();
+        $this->assertFalse(class_exists('\\it\\will\\not\\load\\this\\Class'));
     }
 }

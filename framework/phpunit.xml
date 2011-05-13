@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit backupGlobals="false" bootstrap="bootstrap.php">
 	<testsuites>
-		<testsuite name="Framework">
+		<testsuite name="Framework tests">
 			<directory suffix="Test.php">tests</directory>
 		</testsuite>
 	</testsuites>
@@ -16,6 +16,9 @@
 			target="coverage"
 			title="Framework"
 			highlight="true"/>
+		<log
+			type="testdox-html"
+			target="testdox/index.html"/>
 	</logging>
 	
 	<filter>

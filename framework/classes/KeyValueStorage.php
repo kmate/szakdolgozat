@@ -4,10 +4,13 @@ namespace fw;
 
 class KeyValueStorage
 {
+    protected $_transformedKeys;
     protected $_data;
     
     public function __construct(array $data = array())
     {
+        $this->_transformedKeys = array();
+        
         $this->_data = $this->_transformData($data);
     }
     
@@ -19,6 +22,8 @@ class KeyValueStorage
         {
             if (is_array($value))
             {
+                $this->_transformedKeys[$key] = true;
+                
                 $transformedData[$key] = new KeyValueStorage($value);
             }
             else
@@ -47,6 +52,11 @@ class KeyValueStorage
             return $this->_data[$key];
         }
         
+        if (null === $defaultValue)
+        {
+            return new KeyValueStorage();
+        }
+        
         return $defaultValue;
     }
     
@@ -60,6 +70,12 @@ class KeyValueStorage
         if (is_array($value))
         {
             $value = new KeyValueStorage($value);
+            
+            $this->_transformedKeys[$key] = true;
+        }
+        else
+        {
+            unset($this->_transformedKeys[$key]);
         }
         
         $this->_data[$key] = $value;
@@ -72,15 +88,16 @@ class KeyValueStorage
         return $this->set($key, $value);
     }
     
-    public function toArray()
+    public function toArray($maxDepth = null)
     {
         $result = array();
         
         foreach ($this->_data as $key => $value)
         {
-            if ($value instanceof KeyValueStorage)
+            if ($value instanceof KeyValueStorage &&
+                (!is_int($maxDepth) || $maxDepth > 0 || isset($this->_transformedKeys[$key])))
             {
-                $result[$key] = $value->toArray();
+                $result[$key] = $value->toArray(is_int($maxDepth) ? --$maxDepth : null);
             }
             else
             {

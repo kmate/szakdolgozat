@@ -15,7 +15,7 @@ class ClassLoader
         $autoRegister = false)
     {
         $this->_classPath        = $classPath;
-        $this->_defaultNamespace = (0 == strcmp('\\', $defaultNamespace) ? '' : $defaultNamespace);
+        $this->_defaultNamespace = '\\' === $defaultNamespace ? '' : $defaultNamespace;
         
         if ($autoRegister)
         {
@@ -52,14 +52,9 @@ class ClassLoader
         
         $filePath = $this->getPath($fullQualifiedClassName);
         
-        if (file_exists($filePath))
+        if (is_readable($filePath))
         {
             require_once $filePath;
-        }
-        else
-        {
-            require_once __DIR__ . DIRECTORY_SEPARATOR . 'ClassLoaderException.php';
-            throw new ClassLoaderException('Unable to load class \'' . $fullQualifiedClassName . '\'');
         }
     }
     

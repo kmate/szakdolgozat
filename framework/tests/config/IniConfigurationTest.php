@@ -82,5 +82,6 @@ class IniConfigurationTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('value2b', $iniConfiguration->key2);
         $this->assertEquals('value3',  $iniConfiguration->key3);
         $this->assertEquals('value6',  $iniConfiguration->key4->key5->key6);
+        $this->assertEquals('value7',  $iniConfiguration->key4->key7);
     }
 }

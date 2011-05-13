@@ -12,8 +12,8 @@ class RouteInfo
     
     public function __construct($controllerName, $actionName, $parameters = array())
     {
-        $this->_controllerName = $controllerName;
-        $this->_actionName     = $actionName;
+        $this->_controllerName = preg_replace('/[^a-zA-Z0-9\-]/', '', strtolower($controllerName));
+        $this->_actionName     = preg_replace('/[^a-zA-Z0-9\-]/', '', strtolower($actionName));
         
         if ($parameters instanceof KeyValueStorage)
         {

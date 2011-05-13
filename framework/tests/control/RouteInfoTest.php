@@ -10,16 +10,16 @@ class RouteInfoTest extends PHPUnit_Framework_TestCase
 {
     public function testControllerNameCanBeSet()
     {
-        $routeInfo = new RouteInfo('testController', '');
+        $routeInfo = new RouteInfo('test', '');
         
-        $this->assertEquals('testController', $routeInfo->getControllerName());
+        $this->assertEquals('test', $routeInfo->getControllerName());
     }
     
     public function testActionNameCanBeSet()
     {
-        $routeInfo = new RouteInfo('', 'testAction');
+        $routeInfo = new RouteInfo('', 'test');
         
-        $this->assertEquals('testAction', $routeInfo->getActionName());
+        $this->assertEquals('test', $routeInfo->getActionName());
     }
     
     public function testConstructorWorksWithArrayParameters()
