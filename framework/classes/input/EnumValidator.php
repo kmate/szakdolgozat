@@ -2,12 +2,23 @@
 
 namespace fw\input;
 
+/**
+ * Diszkrét értékhalmaz ellenőrző és szűrő
+ * 
+ * @author Karácsony Máté
+ */
 class EnumValidator extends Validator
 {
     const ERROR_INVALID_VALUE = 'EnumValidator::ERROR_INVALID_VALUE';
     
     private $_acceptedValues = array();
     
+    /**
+     * Elfogadott értékhalmaz bővítése
+     * 
+     * @param  string         további elfogadott érték
+     * @return EnumValidator  önmagát adja vissza (láncolt híváshoz)
+     */
     public function acceptValue($value)
     {
         if (!in_array($value, $this->_acceptedValues))
@@ -18,6 +29,12 @@ class EnumValidator extends Validator
         return $this;
     }
     
+    /**
+     * Ellenőrzés és szűrés végrehajtása
+     * 
+     * @param  mixed  a bemenetről kapott érték
+     * @return bool   az ellenőrzés kimenete
+     */
     public function validate(&$value)
     {
         $this->_lastErrors = array();

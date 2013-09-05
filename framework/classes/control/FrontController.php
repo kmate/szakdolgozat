@@ -8,6 +8,11 @@ use \fw\InvokerException;
 use \fw\config\Configuration;
 use \fw\view\ViewUtils;
 
+/**
+ * Fő vezérlő
+ * 
+ * @author Karácsony Máté
+ */
 class FrontController
 {
     const DEFAULT_CLASSPATH = __DIR__;
@@ -28,6 +33,16 @@ class FrontController
     protected $_lastException;
     protected $_handlingNotFound;
     
+    /**
+     * Fő vezérlő létrehozásak, mely a megadott konfiguráció alapján beállítja saját osztálybetöltőjét
+     * Az alábbi beállítások kerülnek feldolgozásra:
+     * - controller.classpath
+     * - controller.namespace
+     * - controller.pre_hooks
+     * - controller.post_hooks
+     * 
+     * @param Configuration  konfiguráció
+     */
     public function __construct(Configuration $config = null)
     {
         if (null == $config)
@@ -46,22 +61,40 @@ class FrontController
         $this->_classLoader->register();
     }
     
+    /**
+     * Osztálybetöltő megszűntetése
+     */
     public function __destruct()
     {
         $this->_classLoader->unregister();
         unset($this->_classLoader);
     }
     
+    /**
+     * Konfiguráció lekérdezése
+     * 
+     * @return Configuration
+     */
     public function getConfiguration()
     {
         return $this->_config;
     }
     
+    /**
+     * Utolsó kivétel lekérdezése
+     * 
+     * @return \Exception
+     */
     public function getLastException()
     {
         return $this->_lastException;
     }
     
+    /**
+     * Útválasztó lekérdezése (alapértelmezett: UrlRouter)
+     *
+     * @return Router
+     */
     public function getRouter()
     {
         if (null == $this->_router)
@@ -72,6 +105,12 @@ class FrontController
         return $this->_router;
     }
     
+    /**
+     * Útválasztó beállítása
+     *
+     * @param  Router
+     * @return void
+     */
     public function setRouter(Router $router)
     {
         $this->_router = $router;
@@ -79,6 +118,11 @@ class FrontController
         ViewUtils::setRouter($router);
     }
     
+    /**
+     * Vezérlési környezet lekérdezése (alapértelmezett: HttpContext)
+     *
+     * @return Context
+     */
     public function getContext()
     {
         if (null == $this->_context)
@@ -89,12 +133,24 @@ class FrontController
         return $this->_context;
     }
     
+    /**
+     * Vezérlési környezet beállítása
+     *
+     * @param  Context
+     * @return void
+     */
     public function setContext(Context $context)
     {
         $this->_context = $context;
         $this->_context->setFrontController($this);
     }
     
+    /**
+     * Vezérlő nevének kinyerése útvonal információból
+     *
+     * @param  RouteInfo  útvonal információ
+     * @return string
+     */
     public function getControllerClassName(RouteInfo $routeInfo)
     {
         $parsedNamePart = preg_replace(
@@ -112,6 +168,12 @@ class FrontController
         return $fullQualifiedClassName;
     }
     
+    /**
+     * Vezérlő-akció nevének kinyerése útvonal információból
+     *
+     * @param  RouteInfo  útvonal információ
+     * @return string
+     */
     public function getActionMethodName(RouteInfo $routeInfo)
     {
         $parsedNamePart = preg_replace(
@@ -122,6 +184,13 @@ class FrontController
         return $parsedNamePart . self::ACTION_SUFFIX;
     }
     
+    /**
+     * Vezérlés végrehajtása a megadott nyers útvonalon
+     * (ha nincs megadva, az útválasztó dönt)
+     *
+     * @param  string  nyers útvonal
+     * @return void
+     */
     public function dispatch($route = null)
     {
         $this->_handlingNotFound = false;
@@ -139,6 +208,12 @@ class FrontController
         $this->_runHooks($this->_postHooks);
     }
     
+    /**
+     * Vezérlés belső átirányítása egy megadott útvonal információ szerint
+     *
+     * @param  RouteInfo  útvonal információ
+     * @return void
+     */
     public function forward(RouteInfo $routeInfo)
     {
         $this->getContext()->setRouteInfo($routeInfo);
@@ -148,11 +223,23 @@ class FrontController
         throw new Exception('', Exception::STOPPED_BY_FORWARD);
     }
     
+    /**
+     * Vezérlés külső átirányítása egy megadott útvonal információ szerint
+     *
+     * @param  RouteInfo  útvonal információ
+     * @return void
+     */
     public function forwardExternal(RouteInfo $routeInfo)
     {
         $this->getRouter()->redirect($routeInfo);
     }
     
+    /**
+     * Vezérlés átirányítása az alapértelmezett vezérlőre
+     *
+     * @param  bool  igaz érték esetén külső átirányítás, hamis esetén belső
+     * @return void
+     */
     public function forwardToDefault($external = false)
     {
         $routeInfo = $this->getRouter()->parseRoute('');

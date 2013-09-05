@@ -2,6 +2,11 @@
 
 namespace fw\rpc\json;
 
+/**
+ * Távoli eljáráshívás verzió- és hiba-konstansok (JSON-RPC 2.0)
+ * 
+ * @author Karácsony Máté
+ */
 final class Constants
 {
     const VERSION = '2.0';

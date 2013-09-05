@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen; http://apigen.org" />
+	<title>Class fw\control\hooks\AuthenticationHook</title>
+
+	<link rel="stylesheet" href="resources/style.css?v=2011051419" type="text/css" media="all" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />	<script type="text/javascript" src="resources/combined.js"></script>
+	<script type="text/javascript" src="allclasses.js"></script>
+</head>
+
+<body>
+<div id="left">
+	<a href="allclasses.html">All Classes</a>
+
+	<h3>Namespaces</h3>
+	<ul>
+		<li><a href="namespace-fw.html">fw</a>
+		</li>
+		<li><a href="namespace-fw.config.html">fw\config</a>
+		</li>
+		<li><a href="namespace-fw.control.html">fw\control</a>
+		<ul>
+		<li class="active"><a href="namespace-fw.control.hooks.html">fw\control\hooks</a>
+		</ul></li>
+		<li><a href="namespace-fw.input.html">fw\input</a>
+		</li>
+		<li><a href="namespace-fw.log.html">fw\log</a>
+		</li>
+		<li><a href="namespace-fw.rpc.html">fw\rpc</a>
+		<ul>
+		<li><a href="namespace-fw.rpc.json.html">fw\rpc\json</a>
+		</ul></li>
+		<li><a href="namespace-fw.view.html">fw\view</a>
+		</li>
+		<li><a href="namespace-PHP.html">PHP</a>
+		</li>
+	</ul>
+
+	<hr />
+
+	<h3>Classes</h3>
+
+	<ul>
+		<li class="active"><a href="fw.control.hooks.AuthenticationHook.html">AuthenticationHook</a></li>
+
+	</ul>
+
+	<h3>Interfaces</h3>
+
+	<ul>
+		<li><a href="fw.control.hooks.ControllerHook.html">ControllerHook</a></li>
+
+	</ul>
+
+	<h3>Exceptions</h3>
+
+	<ul>
+	</ul>
+</div>
+
+<div id="right">
+	<form action="http://www.google.com/cse" id="search" onsubmit="if(this.q.value.indexOf('more:')==-1)this.q.value+=' more:api'">
+		<input type="hidden" name="cx" value="011549293477758430224:vxofa9ufnhc" /><input type="hidden" name="ie" value="UTF-8" /><input type="text" name="q" class="text" /><input type="submit" value="Search" />
+	</form>
+
+<div id="navigation">
+	<ul>
+		<li><a href="overview.html" title="Summary of all namespaces">Overview</a></li>		<li><a href="namespace-fw.control.hooks.html" title="Summary of fw\control\hooks">Namespace</a></li>
+		<li class="active">Class</li>
+		<li><a href="elements.html">Elements</a></li>
+	</ul>
+</div>
+
+<div id="content">
+	<div id="classSummary">		<p>namespace <a href="namespace-fw.control.hooks.html">fw\control\hooks</a></p>
+
+		<h1>Class AuthenticationHook</h1>
+		<div class="classDescription">
+
+		
+<p>Authentikációt kezelő vezérlés-kiegészítők ősosztálya</p>
+
+		</div>
+		<dl class="tree">
+
+			<dd style="padding-left:0px"><b>fw\control\hooks\AuthenticationHook</b>				 implements <a href="fw.control.hooks.ControllerHook.html">ControllerHook</a>
+			</dd>
+		</dl>
+
+		<div class="classInfo">
+			<b>Abstract Class</b><br />
+				<b>Author:</b> Karácsony Máté<br />
+			<b>Located at</b> <a href="source-control.hooks.AuthenticationHook.php.html#9">/control/hooks/AuthenticationHook.php</a><br />
+		</div>
+	</div>
+
+	<div id="methodSummary">
+
+		<table class="summary">
+		<caption>Method Summary</caption>
+		<tr data-order="1 validateSession" id="_validateSession">
+
+			<td align="right" width="1%"><code class="nowrap">
+				abstract public 
+				bool
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_validateSession">#</a>
+			<code class="nowrap">
+				<a href="source-control.hooks.AuthenticationHook.php.html#22" title="go to source code"><b>validateSession</b></a>(
+					<a href="fw.control.Context.html">fw\control\Context</a>
+					
+					<var>$context</var>
+			)</code>
+
+			<div class="short">
+				
+<p>Munkamenet érvényesség-ellenőrzése</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Munkamenet érvényesség-ellenőrzése</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$context</code> Context vezérlési környezet<br />
+					</div>
+
+					<h4>Returns</h4>
+					<div class="smallList">bool érvényes-e az aktuális munkamenet</div>
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 execute" id="_execute">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_execute">#</a>
+			<code class="nowrap">
+				<a href="source-control.hooks.AuthenticationHook.php.html#30" title="go to source code"><b>execute</b></a>(
+					<a href="fw.control.Context.html">fw\control\Context</a>
+					
+					<var>$context</var>
+			)</code>
+
+			<div class="short">
+				
+<p>Végrehajtás</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Végrehajtás</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$context</code> Context vezérlési környezet<br />
+					</div>
+
+
+
+					<h4>Implementation of</h4>
+					<div class="smallList"><code><a href="fw.control.hooks.ControllerHook.html#_execute">ControllerHook::execute</a></code></div>
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 _checkSkipValidation" id="__checkSkipValidation">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#__checkSkipValidation">#</a>
+			<code class="nowrap">
+				<a href="source-control.hooks.AuthenticationHook.php.html#61" title="go to source code"><b>_checkSkipValidation</b></a>(
+					<a href="fw.control.Context.html">fw\control\Context</a>
+					
+					<var>$context</var>
+			)</code>
+
+			<div class="short">
+				
+			</div>
+
+			<div class="detailed">
+				
+
+
+
+
+
+			</div>
+			</td>
+		</tr>
+
+
+		</table>
+	</div>
+
+
+
+	<div id="constantSummary">
+
+		<table class="summary">
+		<caption>Constant Summary</caption>
+		<tr data-order="DEFAULT_LOGIN_CONTROLLER" id="DEFAULT_LOGIN_CONTROLLER">
+			<td align="right" width="1%"><code><b>DEFAULT_LOGIN_CONTROLLER</b></code></td>
+			<td><code><span class="php-quote">'default'</span></code> <a href="#DEFAULT_LOGIN_CONTROLLER" class="anchor">#</a></td>
+		</tr>
+		<tr data-order="DEFAULT_LOGIN_ACTION" id="DEFAULT_LOGIN_ACTION">
+			<td align="right" width="1%"><code><b>DEFAULT_LOGIN_ACTION</b></code></td>
+			<td><code><span class="php-quote">'login'</span></code> <a href="#DEFAULT_LOGIN_ACTION" class="anchor">#</a></td>
+		</tr>
+		</table>
+	</div>
+
+
+	<div id="propertySummary">
+
+		<table class="summary">
+		<caption>Property Summary</caption>
+		<tr data-order="_loginControllerName" id="$_loginControllerName">
+
+			<td align="right" width="1%"><code class="nowrap">
+				protected 
+				
+			</code></td>
+
+			<td width="1%"><var>$_loginControllerName</var></td>
+			<td><pre><span class="php-keyword1">NULL</span></pre></td>
+			<td> <a href="#$_loginControllerName" class="anchor">#</a></td>
+		</tr>
+
+		<tr data-order="_loginActionName" id="$_loginActionName">
+
+			<td align="right" width="1%"><code class="nowrap">
+				protected 
+				
+			</code></td>
+
+			<td width="1%"><var>$_loginActionName</var></td>
+			<td><pre><span class="php-keyword1">NULL</span></pre></td>
+			<td> <a href="#$_loginActionName" class="anchor">#</a></td>
+		</tr>
+
+
+		</table>
+	</div>
+
+
+</div>
+
+	<div id="footer">
+		Framework generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</body>
+</html>

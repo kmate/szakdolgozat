@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen; http://apigen.org" />
+	<title>Class fw\view\TemplateView</title>
+
+	<link rel="stylesheet" href="resources/style.css?v=2011051419" type="text/css" media="all" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />	<script type="text/javascript" src="resources/combined.js"></script>
+	<script type="text/javascript" src="allclasses.js"></script>
+</head>
+
+<body>
+<div id="left">
+	<a href="allclasses.html">All Classes</a>
+
+	<h3>Namespaces</h3>
+	<ul>
+		<li><a href="namespace-fw.html">fw</a>
+		</li>
+		<li><a href="namespace-fw.config.html">fw\config</a>
+		</li>
+		<li><a href="namespace-fw.control.html">fw\control</a>
+		<ul>
+		<li><a href="namespace-fw.control.hooks.html">fw\control\hooks</a>
+		</ul></li>
+		<li><a href="namespace-fw.input.html">fw\input</a>
+		</li>
+		<li><a href="namespace-fw.log.html">fw\log</a>
+		</li>
+		<li><a href="namespace-fw.rpc.html">fw\rpc</a>
+		<ul>
+		<li><a href="namespace-fw.rpc.json.html">fw\rpc\json</a>
+		</ul></li>
+		<li class="active"><a href="namespace-fw.view.html">fw\view</a>
+		</li>
+		<li><a href="namespace-PHP.html">PHP</a>
+		</li>
+	</ul>
+
+	<hr />
+
+	<h3>Classes</h3>
+
+	<ul>
+		<li><a href="fw.view.Template.html">Template</a></li>
+
+		<li class="active"><a href="fw.view.TemplateView.html">TemplateView</a></li>
+
+		<li><a href="fw.view.View.html">View</a></li>
+
+		<li><a href="fw.view.ViewUtils.html">ViewUtils</a></li>
+
+	</ul>
+
+	<h3>Interfaces</h3>
+
+	<ul>
+	</ul>
+
+	<h3>Exceptions</h3>
+
+	<ul>
+		<li><a href="fw.view.Exception.html">Exception</a></li>
+
+		<li><a href="fw.view.TemplateException.html">TemplateException</a></li>
+
+	</ul>
+</div>
+
+<div id="right">
+	<form action="http://www.google.com/cse" id="search" onsubmit="if(this.q.value.indexOf('more:')==-1)this.q.value+=' more:api'">
+		<input type="hidden" name="cx" value="011549293477758430224:vxofa9ufnhc" /><input type="hidden" name="ie" value="UTF-8" /><input type="text" name="q" class="text" /><input type="submit" value="Search" />
+	</form>
+
+<div id="navigation">
+	<ul>
+		<li><a href="overview.html" title="Summary of all namespaces">Overview</a></li>		<li><a href="namespace-fw.view.html" title="Summary of fw\view">Namespace</a></li>
+		<li class="active">Class</li>
+		<li><a href="elements.html">Elements</a></li>
+	</ul>
+</div>
+
+<div id="content">
+	<div id="classSummary">		<p>namespace <a href="namespace-fw.view.html">fw\view</a></p>
+
+		<h1>Class TemplateView</h1>
+		<div class="classDescription">
+
+		
+<p>Sablon alapú nézet</p>
+
+		</div>
+		<dl class="tree">
+
+			<dd style="padding-left:0px">				<a href="fw.view.View.html">fw\view\View</a>
+				
+			</dd>
+			<dd style="padding-left:30px">				<img src="resources/inherit.gif" alt="extended by" />
+<b>fw\view\TemplateView</b>				
+			</dd>
+		</dl>
+
+		<div class="classInfo">
+			
+				<b>Author:</b> Karácsony Máté<br />
+			<b>Located at</b> <a href="source-view.TemplateView.php.html#8">/view/TemplateView.php</a><br />
+		</div>
+	</div>
+
+	<div id="methodSummary">
+
+		<table class="summary">
+		<caption>Method Summary</caption>
+		<tr data-order="1 __construct" id="___construct">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#___construct">#</a>
+			<code class="nowrap">
+				<a href="source-view.TemplateView.php.html#24" title="go to source code"><b>__construct</b></a>(
+					<a href="fw.config.Configuration.html">fw\config\Configuration</a>
+					
+					<var>$config</var> = <span class="php-keyword1">NULL</span>
+			)</code>
+
+			<div class="short">
+				
+<p>Előkészíti a sablon-nézetet, beállítja a sablonok könyvtárát a
+konfiguráció alapján</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Előkészíti a sablon-nézetet, beállítja a sablonok könyvtárát a
+konfiguráció alapján<br>
+(a view.template_directory beállítást felhasználva)</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$config</code> Configuration konfiguráció<br />
+					</div>
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 getLayoutTemplate" id="_getLayoutTemplate">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				<a href="fw.view.Template.html">Template</a>
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_getLayoutTemplate">#</a>
+			<code class="nowrap">
+				<a href="source-view.TemplateView.php.html#41" title="go to source code"><b>getLayoutTemplate</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Lekérdezi az aktív elrendezési sablont</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Lekérdezi az aktív elrendezési sablont</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="smallList"><a href="fw.view.Template.html">Template</a> </div>
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 getActionTemplate" id="_getActionTemplate">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				<a href="fw.view.Template.html">Template</a>
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_getActionTemplate">#</a>
+			<code class="nowrap">
+				<a href="source-view.TemplateView.php.html#51" title="go to source code"><b>getActionTemplate</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Lekérdezi az aktív vezérlő-akció sablont</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Lekérdezi az aktív vezérlő-akció sablont</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="smallList"><a href="fw.view.Template.html">Template</a> </div>
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 setTemplatesByRouteInfo" id="_setTemplatesByRouteInfo">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_setTemplatesByRouteInfo">#</a>
+			<code class="nowrap">
+				<a href="source-view.TemplateView.php.html#61" title="go to source code"><b>setTemplatesByRouteInfo</b></a>(
+					<a href="fw.control.RouteInfo.html">fw\control\RouteInfo</a>
+					
+					<var>$routeInfo</var>
+			)</code>
+
+			<div class="short">
+				
+<p>Beállítja az aktív elrendezési és vezérlő-akció sablonokat egy
+útvonal információ alapján</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Beállítja az aktív elrendezési és vezérlő-akció sablonokat egy
+útvonal információ alapján</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$routeInfo</code> RouteInfo útvonal információ<br />
+					</div>
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 setLayoutTemplate" id="_setLayoutTemplate">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_setLayoutTemplate">#</a>
+			<code class="nowrap">
+				<a href="source-view.TemplateView.php.html#79" title="go to source code"><b>setLayoutTemplate</b></a>(
+					<a href="fw.view.Template.html">Template</a>
+					
+					<var>$template</var>
+			)</code>
+
+			<div class="short">
+				
+<p>Beállítja az aktív elrendezési sablont</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Beállítja az aktív elrendezési sablont</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$template</code> <a href="fw.view.Template.html">Template</a> az új elrendezési sablon<br />
+					</div>
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 setActionTemplate" id="_setActionTemplate">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_setActionTemplate">#</a>
+			<code class="nowrap">
+				<a href="source-view.TemplateView.php.html#90" title="go to source code"><b>setActionTemplate</b></a>(
+					<a href="fw.view.Template.html">Template</a>
+					
+					<var>$template</var>
+			)</code>
+
+			<div class="short">
+				
+<p>Beállítja az aktív vezérlő-akció sablont</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Beállítja az aktív vezérlő-akció sablont</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$template</code> <a href="fw.view.Template.html">Template</a> az új vezérlő-akció sablon<br />
+					</div>
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 createTemplate" id="_createTemplate">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				<a href="fw.view.Template.html">Template</a>
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_createTemplate">#</a>
+			<code class="nowrap">
+				<a href="source-view.TemplateView.php.html#101" title="go to source code"><b>createTemplate</b></a>(
+					string
+					<var>$templateName</var>
+			)</code>
+
+			<div class="short">
+				
+<p>Új sablont hoz létre a konfigurációból olvasott könyvtárból a sablon
+neve alpján</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Új sablont hoz létre a konfigurációból olvasott könyvtárból a sablon
+neve alpján</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$templateName</code> string az új sablon neve<br />
+					</div>
+
+					<h4>Returns</h4>
+					<div class="smallList"><a href="fw.view.Template.html">Template</a> </div>
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 parseActionTemplateName" id="_parseActionTemplateName">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_parseActionTemplateName">#</a>
+			<code class="nowrap">
+				<a href="source-view.TemplateView.php.html#112" title="go to source code"><b>parseActionTemplateName</b></a>(
+					<a href="fw.control.RouteInfo.html">fw\control\RouteInfo</a>
+					
+					<var>$routeInfo</var>
+			)</code>
+
+			<div class="short">
+				
+<p>Kinyeri a vezérlő-akció sablon nevét egy útvonal információból</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Kinyeri a vezérlő-akció sablon nevét egy útvonal információból</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$routeInfo</code> RouteInfo útvonal információ<br />
+					</div>
+
+					<h4>Returns</h4>
+					<div class="smallList">string a sablon neve</div>
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 parseLayoutTemplateName" id="_parseLayoutTemplateName">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_parseLayoutTemplateName">#</a>
+			<code class="nowrap">
+				<a href="source-view.TemplateView.php.html#123" title="go to source code"><b>parseLayoutTemplateName</b></a>(
+					<a href="fw.control.RouteInfo.html">fw\control\RouteInfo</a>
+					
+					<var>$routeInfo</var>
+			)</code>
+
+			<div class="short">
+				
+<p>Kinyeri az elrendezés sablon nevét egy útvonal információból</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Kinyeri az elrendezés sablon nevét egy útvonal információból</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$routeInfo</code> RouteInfo útvonal információ<br />
+					</div>
+
+					<h4>Returns</h4>
+					<div class="smallList">string a sablon neve</div>
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 _render" id="__render">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 protected 
+				string
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#__render">#</a>
+			<code class="nowrap">
+				<a href="source-view.TemplateView.php.html#138" title="go to source code"><b>_render</b></a>(
+					bool
+					<var>$returnContents</var> = <span class="php-keyword1">false</span>
+			)</code>
+
+			<div class="short">
+				
+<p>Nézet-sablonok kiértékelése</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Nézet-sablonok kiértékelése</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$returnContents</code> bool visszatérés a kiértékelés eredményével (hamis érték esetén a
+kimenetre írja)<br />
+					</div>
+
+					<h4>Returns</h4>
+					<div class="smallList">string </div>
+
+
+			</div>
+			</td>
+		</tr>
+
+
+		</table>
+	</div>
+
+
+	<h2>Methods Inherited From <a href="fw.view.View.html#methodSummary">View</a></h2>
+	<div class="box"><code>
+		<a href="fw.view.View.html#_setAutoRender">setAutoRender()</a>, <a href="fw.view.View.html#_runAutoRenderer">runAutoRenderer()</a>, <a href="fw.view.View.html#_render">render()</a>, <a href="fw.view.View.html#_generateLink">generateLink()</a>, <a href="fw.view.View.html#_getBaseHref">getBaseHref()</a>, <a href="fw.view.View.html#__render">_render()</a>
+	</code></div>
+
+	<div id="constantSummary">
+
+		<table class="summary">
+		<caption>Constant Summary</caption>
+		<tr data-order="DEFAULT_LAYOUT_TEMPLATE" id="DEFAULT_LAYOUT_TEMPLATE">
+			<td align="right" width="1%"><code><b>DEFAULT_LAYOUT_TEMPLATE</b></code></td>
+			<td><code><span class="php-quote">'layout'</span></code> <a href="#DEFAULT_LAYOUT_TEMPLATE" class="anchor">#</a></td>
+		</tr>
+		</table>
+	</div>
+
+
+
+	<h2>Properties Inherited From <a href="fw.view.View.html#propertySummary">View</a></h2>
+	<div class="box"><code><var>$_rendered</var>, <var>$_autoRender</var></code></div>
+
+</div>
+
+	<div id="footer">
+		Framework generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</body>
+</html>

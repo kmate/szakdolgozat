@@ -2,8 +2,18 @@
 
 namespace fw;
 
+/**
+ * Segédfüggvények (HTTP protokollhoz)
+ * 
+ * @author Karácsony Máté
+ */
 class Utils
 {
+    /**
+     * Lekéri a kliens IP-címét
+     *
+     * @return string  a kliens IP-címe, vagy 'unknown'
+     */
     public static function getClientIp()
     {
         $keys = array(
@@ -33,6 +43,11 @@ class Utils
         return 'unknown';
     }
     
+    /**
+     * Lekéri a kliens szoftver azonosítóját (user agent)
+     *
+     * @return string  a kliens szoftver azonosítója, vagy 'unknown'
+     */
     public static function getUserAgent()
     {
         if (isset($_SERVER['HTTP_USER_AGENT']))
@@ -45,6 +60,12 @@ class Utils
         }
     }
     
+    /**
+     * Átirányítási fejlécet állít be és megszakítja a szkript futását
+     *
+     * @param  string  az átirányítás cél-címe
+     * @return void
+     */
     public static function setLocation($location)
     {
         header('Location: ' . $location);

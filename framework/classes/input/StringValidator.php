@@ -2,6 +2,11 @@
 
 namespace fw\input;
 
+/**
+ * Karakterlánc ellenőrző és szűrő
+ * 
+ * @author Karácsony Máté
+ */
 class StringValidator extends Validator
 {
     const ERROR_MIN_LENGTH = 'StringValidator::ERROR_MIN_LENGTH';
@@ -10,6 +15,12 @@ class StringValidator extends Validator
     private $_minLength = 0;
     private $_maxLength = 0;
     
+    /**
+     * Minimális érvényes hossz beállítása
+     * 
+     * @param  string           a minimális érvényes hossz
+     * @return StringValidator  önmagát adja vissza (láncolt híváshoz)
+     */
     public function minLength($minLength = 0)
     {
         $this->_minLength = $minLength;
@@ -17,6 +28,12 @@ class StringValidator extends Validator
         return $this;
     }
     
+    /**
+     * Maximális érvényes hossz beállítása
+     * 
+     * @param  string           a maximális érvényes hossz
+     * @return StringValidator  önmagát adja vissza (láncolt híváshoz)
+     */
     public function maxLength($maxLength = 0)
     {
         $this->_maxLength = $maxLength;
@@ -24,6 +41,12 @@ class StringValidator extends Validator
         return $this;
     }
     
+    /**
+     * Ellenőrzés és szűrés végrehajtása
+     * 
+     * @param  mixed  a bemenetről kapott érték
+     * @return bool   az ellenőrzés kimenete
+     */
     public function validate(&$value)
     {
         $this->_lastErrors = array();

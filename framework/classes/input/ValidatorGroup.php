@@ -4,11 +4,24 @@ namespace fw\input;
 
 use \fw\KeyValueStorage;
 
+/**
+ * Csoportos bemenet-ellenőrző és szűrő
+ * 
+ * @author Karácsony Máté
+ */
 class ValidatorGroup extends Validator
 {
     private $_keyValidators = array();
     private $_defaultValues = array();
     
+    /**
+     * Új bemenet-ellenőrző hozzáadása
+     * 
+     * @param  Validator       bemenet-ellenőrző
+     * @param  string          érték kulcsa a bemeneti kollekcióban
+     * @param  mixed           alapértelmezett érték
+     * @return ValidatorGroup  önmagát adja vissza (láncolt híváshoz)
+     */
     public function addValidator(Validator $validator, $key, $defaultValue = null)
     {
         $this->_keyValidators[$key][] = $validator;
@@ -17,6 +30,12 @@ class ValidatorGroup extends Validator
         return $this;
     }
     
+    /**
+     * Ellenőrzés és szűrés végrehajtása
+     * 
+     * @param  mixed  a bemenetről kapott érték halmaza (asszociatív tömb vagy kulcs-érték tár)
+     * @return bool   az ellenőrzés kimenete
+     */
     public function validate(&$collection)
     {
         $this->_lastErrors = new KeyValueStorage();

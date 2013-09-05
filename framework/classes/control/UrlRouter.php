@@ -5,8 +5,19 @@ namespace fw\control;
 use \fw\Utils;
 use \fw\config\Configuration;
 
+/**
+ * URL-alapú útválasztó
+ * 
+ * @author Karácsony Máté
+ */
 class UrlRouter extends Router
 {
+    /**
+     * Információk kinyerése URL-ből
+     * 
+     * @param  string     URL
+     * @return RouteInfo  útvonal információ
+     */
     public function parseRoute($route = null)
     {
         if (null === $route)
@@ -30,6 +41,12 @@ class UrlRouter extends Router
         return new RouteInfo($controller, $action, $parameters);
     }
     
+    /**
+     * URL létrehozása útvonal információból
+     * 
+     * @param  RouteInfo  útvonal információ
+     * @return string     URL
+     */
     public function generateRoute(RouteInfo $routeInfo)
     {
         $route  = '/' . $routeInfo->getControllerName();
@@ -55,6 +72,12 @@ class UrlRouter extends Router
         return $route;
     }
     
+    /**
+     * Átirányítás útvonal információ alapján
+     * 
+     * @param  RouteInfo  cél-útvonal információ
+     * @return void
+     */
     public function redirect(RouteInfo $routeInfo)
     {
         $prefix = isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : '';

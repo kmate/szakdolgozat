@@ -2,10 +2,21 @@
 
 namespace fw\config;
 
+/**
+ * INI-formátumú fájl konfiguráció
+ * 
+ * @author Karácsony Máté
+ */
 class IniConfiguration extends FileBasedConfiguration
 {
     private $_keySeparator;
     
+    /**
+     * Konfigurációs struktúrába transzformálja az útvonalával megadott INI-fájlt
+     * 
+     * @param string  a betöltendő fájl elérési útvonala
+     * @param string  a kulcsok szintjeinek elválasztó karaktere
+     */
     public function __construct($filePath, $keySeparator = '.')
     {
         $this->_keySeparator = $keySeparator;

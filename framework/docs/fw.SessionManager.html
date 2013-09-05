@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen; http://apigen.org" />
+	<title>Class fw\SessionManager</title>
+
+	<link rel="stylesheet" href="resources/style.css?v=2011051419" type="text/css" media="all" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />	<script type="text/javascript" src="resources/combined.js"></script>
+	<script type="text/javascript" src="allclasses.js"></script>
+</head>
+
+<body>
+<div id="left">
+	<a href="allclasses.html">All Classes</a>
+
+	<h3>Namespaces</h3>
+	<ul>
+		<li class="active"><a href="namespace-fw.html">fw</a>
+		</li>
+		<li><a href="namespace-fw.config.html">fw\config</a>
+		</li>
+		<li><a href="namespace-fw.control.html">fw\control</a>
+		<ul>
+		<li><a href="namespace-fw.control.hooks.html">fw\control\hooks</a>
+		</ul></li>
+		<li><a href="namespace-fw.input.html">fw\input</a>
+		</li>
+		<li><a href="namespace-fw.log.html">fw\log</a>
+		</li>
+		<li><a href="namespace-fw.rpc.html">fw\rpc</a>
+		<ul>
+		<li><a href="namespace-fw.rpc.json.html">fw\rpc\json</a>
+		</ul></li>
+		<li><a href="namespace-fw.view.html">fw\view</a>
+		</li>
+		<li><a href="namespace-PHP.html">PHP</a>
+		</li>
+	</ul>
+
+	<hr />
+
+	<h3>Classes</h3>
+
+	<ul>
+		<li><a href="fw.ClassLoader.html">ClassLoader</a></li>
+
+		<li><a href="fw.Invoker.html">Invoker</a></li>
+
+		<li><a href="fw.KeyValueStorage.html">KeyValueStorage</a></li>
+
+		<li class="active"><a href="fw.SessionManager.html">SessionManager</a></li>
+
+		<li><a href="fw.Utils.html">Utils</a></li>
+
+	</ul>
+
+	<h3>Interfaces</h3>
+
+	<ul>
+	</ul>
+
+	<h3>Exceptions</h3>
+
+	<ul>
+		<li><a href="fw.Exception.html">Exception</a></li>
+
+		<li><a href="fw.InvokerException.html">InvokerException</a></li>
+
+	</ul>
+</div>
+
+<div id="right">
+	<form action="http://www.google.com/cse" id="search" onsubmit="if(this.q.value.indexOf('more:')==-1)this.q.value+=' more:api'">
+		<input type="hidden" name="cx" value="011549293477758430224:vxofa9ufnhc" /><input type="hidden" name="ie" value="UTF-8" /><input type="text" name="q" class="text" /><input type="submit" value="Search" />
+	</form>
+
+<div id="navigation">
+	<ul>
+		<li><a href="overview.html" title="Summary of all namespaces">Overview</a></li>		<li><a href="namespace-fw.html" title="Summary of fw">Namespace</a></li>
+		<li class="active">Class</li>
+		<li><a href="elements.html">Elements</a></li>
+	</ul>
+</div>
+
+<div id="content">
+	<div id="classSummary">		<p>namespace <a href="namespace-fw.html">fw</a></p>
+
+		<h1>Class SessionManager</h1>
+		<div class="classDescription">
+
+		
+<p>Munkamenet-kezelő</p>
+
+		</div>
+
+		<div class="classInfo">
+			
+				<b>Author:</b> Karácsony Máté<br />
+			<b>Located at</b> <a href="source-SessionManager.php.html#5">/SessionManager.php</a><br />
+		</div>
+	</div>
+
+	<div id="methodSummary">
+
+		<table class="summary">
+		<caption>Method Summary</caption>
+		<tr data-order="0 start" id="_start">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public static
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_start">#</a>
+			<code class="nowrap">
+				<a href="source-SessionManager.php.html#16" title="go to source code"><b>start</b></a>(
+					string
+					<var>$sessionName</var>
+			)</code>
+
+			<div class="short">
+				
+<p>Elindítja vagy folytatja az adott nevű munkamenetet</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Elindítja vagy folytatja az adott nevű munkamenetet</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$sessionName</code> string a munkamenet neve<br />
+					</div>
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="0 login" id="_login">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public static
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_login">#</a>
+			<code class="nowrap">
+				<a href="source-SessionManager.php.html#28" title="go to source code"><b>login</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Bejelentkezettnek jelöli meg az aktuális munkamenetet,</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Bejelentkezettnek jelöli meg az aktuális munkamenetet,<br>
+és kliens információkkal tölti fel a későbbi ellenőrzéshez</p>
+
+
+
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="0 isValid" id="_isValid">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public static
+				bool
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_isValid">#</a>
+			<code class="nowrap">
+				<a href="source-SessionManager.php.html#43" title="go to source code"><b>isValid</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Ellenőrzi, hogy érvényes-e az aktuális bejelentkezett munkamenet</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Ellenőrzi, hogy érvényes-e az aktuális bejelentkezett munkamenet</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="smallList">bool </div>
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="0 destroy" id="_destroy">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public static
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_destroy">#</a>
+			<code class="nowrap">
+				<a href="source-SessionManager.php.html#62" title="go to source code"><b>destroy</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Megszűnteti és törli az aktuális munkamenetet</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Megszűnteti és törli az aktuális munkamenetet</p>
+
+
+
+
+
+
+			</div>
+			</td>
+		</tr>
+
+
+		</table>
+	</div>
+
+
+
+	<div id="constantSummary">
+
+		<table class="summary">
+		<caption>Constant Summary</caption>
+		<tr data-order="VAR_LOGGED_IN" id="VAR_LOGGED_IN">
+			<td align="right" width="1%"><code><b>VAR_LOGGED_IN</b></code></td>
+			<td><code><span class="php-quote">'__loggedIn'</span></code> <a href="#VAR_LOGGED_IN" class="anchor">#</a></td>
+		</tr>
+		<tr data-order="VAR_CLIENT_IP" id="VAR_CLIENT_IP">
+			<td align="right" width="1%"><code><b>VAR_CLIENT_IP</b></code></td>
+			<td><code><span class="php-quote">'__clientIp'</span></code> <a href="#VAR_CLIENT_IP" class="anchor">#</a></td>
+		</tr>
+		<tr data-order="VAR_USER_AGENT" id="VAR_USER_AGENT">
+			<td align="right" width="1%"><code><b>VAR_USER_AGENT</b></code></td>
+			<td><code><span class="php-quote">'__userAgent'</span></code> <a href="#VAR_USER_AGENT" class="anchor">#</a></td>
+		</tr>
+		</table>
+	</div>
+
+
+
+
+</div>
+
+	<div id="footer">
+		Framework generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</body>
+</html>

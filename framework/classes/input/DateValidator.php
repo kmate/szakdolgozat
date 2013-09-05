@@ -2,6 +2,11 @@
 
 namespace fw\input;
 
+/**
+ * Dátum ellenőrző és szűrő
+ * 
+ * @author Karácsony Máté
+ */
 class DateValidator extends RegexpValidator
 {
     const ERROR_INVALID_DATE = 'DateValidator::ERROR_INVALID_DATE';
@@ -29,6 +34,12 @@ class DateValidator extends RegexpValidator
         $this->outputFormat(self::DEFAULT_FORMAT);
     }
     
+    /**
+     * Bemeneti formátum beállítása
+     * 
+     * @param  string         a bemeneti formátum
+     * @return DateValidator  önmagát adja vissza (láncolt híváshoz)
+     */
     public function inputFormat($inputFormat)
     {
         $this->_inputFormat = $inputFormat;
@@ -36,6 +47,12 @@ class DateValidator extends RegexpValidator
         return $this;
     }
     
+    /**
+     * Kimeneti formátum beállítása
+     * 
+     * @param  string         a kimeneti formátum
+     * @return DateValidator  önmagát adja vissza (láncolt híváshoz)
+     */
     public function outputFormat($outputFormat)
     {
         $this->_outputFormat = $outputFormat;
@@ -43,6 +60,12 @@ class DateValidator extends RegexpValidator
         return $this;
     }
     
+    /**
+     * A legkésőbbi, már el nem fogadott határdátum beállítása
+     * 
+     * @param  string         a határdátum
+     * @return DateValidator  önmagát adja vissza (láncolt híváshoz)
+     */
     public function before($before)
     {
         $beforeStamp = $this->_parseDate($before);
@@ -52,6 +75,12 @@ class DateValidator extends RegexpValidator
         return $this;
     }
     
+    /**
+     * A legkorábbi, még elfogadott határdátum beállítása
+     * 
+     * @param  string         a határdátum
+     * @return DateValidator  önmagát adja vissza (láncolt híváshoz)
+     */
     public function notBefore($notBefore)
     {
         $notBeforeStamp = $this->_parseDate($notBefore);
@@ -61,6 +90,12 @@ class DateValidator extends RegexpValidator
         return $this;
     }
     
+    /**
+     * A legkorábbi, már el nem fogadott határdátum beállítása
+     * 
+     * @param  string         a határdátum
+     * @return DateValidator  önmagát adja vissza (láncolt híváshoz)
+     */
     public function after($after)
     {
         $afterStamp = $this->_parseDate($after);
@@ -70,6 +105,12 @@ class DateValidator extends RegexpValidator
         return $this;
     }
     
+    /**
+     * A legkésőbbi, még elfogadott határdátum beállítása
+     * 
+     * @param  string         a határdátum
+     * @return DateValidator  önmagát adja vissza (láncolt híváshoz)
+     */
     public function notAfter($notAfter)
     {
         $notAfterStamp = $this->_parseDate($notAfter);
@@ -79,6 +120,12 @@ class DateValidator extends RegexpValidator
         return $this;
     }
     
+    /**
+     * Ellenőrzés és szűrés végrehajtása
+     * 
+     * @param  mixed  a bemenetről kapott érték
+     * @return bool   az ellenőrzés kimenete
+     */
     public function validate(&$value)
     {
         if (!($isValid = parent::validate($value)))

@@ -89,7 +89,7 @@
           <td class="tableHead" colspan="11">&nbsp;</td>
         </tr>
         <tr>
-          <td class="coverItem"><b><a href="#5">Exception</a></b></td>
+          <td class="coverItem"><b><a href="#10">Exception</a></b></td>
           <td class="coverBar" align="center" width="100">
             <table border="0" cellspacing="0" cellpadding="1">
               <tr>
@@ -133,17 +133,22 @@
       <tr>
         <td>
 <pre class="source">
-<span class="lineNum" id="container1"><a name="1"></a><a href="#1" id="line1">       1</a> </span>                : <span class="default">&lt;?php</span>                                
-<span class="lineNum" id="container2"><a name="2"></a><a href="#2" id="line2">       2</a> </span>                :                                      
-<span class="lineNum" id="container3"><a name="3"></a><a href="#3" id="line3">       3</a> </span>                : <span class="keyword">namespace</span><span class="default">&nbsp;</span><span class="default">fw</span><span class="default">\</span><span class="default">config</span><span class="keyword">;</span>                 
-<span class="lineNum" id="container4"><a name="4"></a><a href="#4" id="line4">       4</a> </span>                :                                      
-<span class="lineNum" id="container5"><a name="5"></a><a href="#5" id="line5">       5</a> </span>                : <span class="keyword">class</span><span class="default">&nbsp;</span><span class="default">Exception</span><span class="default">&nbsp;</span><span class="keyword">extends</span><span class="default">&nbsp;</span><span class="default">\</span><span class="default">fw</span><span class="default">\</span><span class="default">Exception</span>
-<span class="lineNum" id="container6"><a name="6"></a><a href="#6" id="line6">       6</a> </span><span class="lineCov">              1 : <span class="keyword">{</span>                                    </span>
-<span class="lineNum" id="container7"><a name="7"></a><a href="#7" id="line7">       7</a> </span>                : <span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="default">const</span><span class="default">&nbsp;</span><span class="default">INVALID_SECTION_NAME</span><span class="default">&nbsp;&nbsp;&nbsp;</span><span class="keyword">=</span><span class="default">&nbsp;</span><span class="default">1</span><span class="keyword">;</span>
-<span class="lineNum" id="container8"><a name="8"></a><a href="#8" id="line8">       8</a> </span>                : <span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="default">const</span><span class="default">&nbsp;</span><span class="default">UNABLE_TO_READ_FILE</span><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">=</span><span class="default">&nbsp;</span><span class="default">2</span><span class="keyword">;</span>
-<span class="lineNum" id="container9"><a name="9"></a><a href="#9" id="line9">       9</a> </span>                : <span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="default">const</span><span class="default">&nbsp;</span><span class="default">UNABLE_TO_PARSE_FILE</span><span class="default">&nbsp;&nbsp;&nbsp;</span><span class="keyword">=</span><span class="default">&nbsp;</span><span class="default">3</span><span class="keyword">;</span>
-<span class="lineNum" id="container10"><a name="10"></a><a href="#10" id="line10">      10</a> </span>                : <span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="default">const</span><span class="default">&nbsp;</span><span class="default">MISSING_PARENT_SECTION</span><span class="default">&nbsp;</span><span class="keyword">=</span><span class="default">&nbsp;</span><span class="default">4</span><span class="keyword">;</span>
-<span class="lineNum" id="container11"><a name="11"></a><a href="#11" id="line11">      11</a> </span>                : <span class="keyword">}</span>                                    
+<span class="lineNum" id="container1"><a name="1"></a><a href="#1" id="line1">       1</a> </span>                : <span class="default">&lt;?php</span>                                                   
+<span class="lineNum" id="container2"><a name="2"></a><a href="#2" id="line2">       2</a> </span>                :                                                         
+<span class="lineNum" id="container3"><a name="3"></a><a href="#3" id="line3">       3</a> </span>                : <span class="keyword">namespace</span><span class="default">&nbsp;</span><span class="default">fw</span><span class="default">\</span><span class="default">config</span><span class="keyword">;</span>                                    
+<span class="lineNum" id="container4"><a name="4"></a><a href="#4" id="line4">       4</a> </span>                :                                                         
+<span class="lineNum" id="container5"><a name="5"></a><a href="#5" id="line5">       5</a> </span>                : <span class="comment">/**</span>                                                     
+<span class="lineNum" id="container6"><a name="6"></a><a href="#6" id="line6">       6</a> </span>                : <span class="comment">&nbsp;*&nbsp;Konfigurációs&nbsp;osztályok&nbsp;kivételeinek&nbsp;ősosztálya</span>
+<span class="lineNum" id="container7"><a name="7"></a><a href="#7" id="line7">       7</a> </span>                : <span class="comment">&nbsp;*&nbsp;</span>                                                      
+<span class="lineNum" id="container8"><a name="8"></a><a href="#8" id="line8">       8</a> </span>                : <span class="comment">&nbsp;*&nbsp;@author&nbsp;Karácsony&nbsp;Máté</span>                            
+<span class="lineNum" id="container9"><a name="9"></a><a href="#9" id="line9">       9</a> </span>                : <span class="comment">&nbsp;*/</span>                                                     
+<span class="lineNum" id="container10"><a name="10"></a><a href="#10" id="line10">      10</a> </span>                : <span class="keyword">class</span><span class="default">&nbsp;</span><span class="default">Exception</span><span class="default">&nbsp;</span><span class="keyword">extends</span><span class="default">&nbsp;</span><span class="default">\</span><span class="default">fw</span><span class="default">\</span><span class="default">Exception</span>                   
+<span class="lineNum" id="container11"><a name="11"></a><a href="#11" id="line11">      11</a> </span><span class="lineCov">              1 : <span class="keyword">{</span>                                                       </span>
+<span class="lineNum" id="container12"><a name="12"></a><a href="#12" id="line12">      12</a> </span>                : <span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="default">const</span><span class="default">&nbsp;</span><span class="default">INVALID_SECTION_NAME</span><span class="default">&nbsp;&nbsp;&nbsp;</span><span class="keyword">=</span><span class="default">&nbsp;</span><span class="default">1</span><span class="keyword">;</span>                   
+<span class="lineNum" id="container13"><a name="13"></a><a href="#13" id="line13">      13</a> </span>                : <span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="default">const</span><span class="default">&nbsp;</span><span class="default">UNABLE_TO_READ_FILE</span><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">=</span><span class="default">&nbsp;</span><span class="default">2</span><span class="keyword">;</span>                   
+<span class="lineNum" id="container14"><a name="14"></a><a href="#14" id="line14">      14</a> </span>                : <span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="default">const</span><span class="default">&nbsp;</span><span class="default">UNABLE_TO_PARSE_FILE</span><span class="default">&nbsp;&nbsp;&nbsp;</span><span class="keyword">=</span><span class="default">&nbsp;</span><span class="default">3</span><span class="keyword">;</span>                   
+<span class="lineNum" id="container15"><a name="15"></a><a href="#15" id="line15">      15</a> </span>                : <span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="default">const</span><span class="default">&nbsp;</span><span class="default">MISSING_PARENT_SECTION</span><span class="default">&nbsp;</span><span class="keyword">=</span><span class="default">&nbsp;</span><span class="default">4</span><span class="keyword">;</span>                   
+<span class="lineNum" id="container16"><a name="16"></a><a href="#16" id="line16">      16</a> </span>                : <span class="keyword">}</span>                                                       
 
 </pre>
         </td>
@@ -152,7 +157,7 @@
 
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr><td class="ruler"><img src="glass.png" width="3" height="3" alt=""></td></tr>
-      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.0.4</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.6</a> and PHPUnit 3.5.13 at Fri May 13 13:17:23 CEST 2011.</td></tr>
+      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.0.4</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.6</a> and PHPUnit 3.5.13 at Sun May 15 18:28:23 CEST 2011.</td></tr>
     </table>
 
     <br />
@@ -162,8 +167,8 @@
       $E = YAHOO.util.Event;
       YAHOO.namespace("phpunit.container");
       YAHOO.phpunit.container.panelsData = {
-        "panel6": {
-          "header": "1 test covers line 6",
+        "panel11": {
+          "header": "1 test covers line 11",
           "body": "<ul><li class=\"testPassed\">fw\\tests\\config\\XmlConfigurationTest::testConstructorThrowsExceptionOnIncorrectXmlFile</li></ul>",
           "footer": ""
         },

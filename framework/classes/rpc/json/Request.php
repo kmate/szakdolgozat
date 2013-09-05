@@ -2,6 +2,11 @@
 
 namespace fw\rpc\json;
 
+/**
+ * Távoli eljáráshívási kérés (JSON-RPC 2.0)
+ * 
+ * @author Karácsony Máté
+ */
 class Request implements \fw\rpc\Request
 {
     private $_version;
@@ -9,42 +14,72 @@ class Request implements \fw\rpc\Request
     private $_parameters;
     private $_messageId;
     
+    /**
+     * Új kérés-objektumot hoz létre a megadott tartalommal
+     * 
+     * @param string  verzió
+     * @param string  metódusnév
+     * @param array   hívási paraméterek
+     * @param string  üzenet-azonosító
+     */
     public function __construct(
         $version          = Constants::VERSION,
         $method           = '',
         array $parameters = array(),
-        $messageId        = null,
-        $isBatch          = false
+        $messageId        = null
     )
     {
         $this->_version    = $version;
         $this->_method     = $method;
         $this->_parameters = $parameters;
         $this->_messageId  = $messageId;
-        
-        $this->_isBatch  = $isBatch;
     }
     
+    /**
+     * Verzió lekérdezése
+     * 
+     * @return string
+     */
     public function getVersion()
     {
         return $this->_version;
     }
     
+    /**
+     * Hívandó metódus lekérdezése
+     * 
+     * @return string
+     */
     public function getMethod()
     {
         return $this->_method;
     }
     
+    /**
+     * Hívási paraméterek lekérdezése
+     * 
+     * @return string
+     */
     public function getParameters()
     {
         return $this->_parameters;
     }
     
+    /**
+     * Üzenet-azonosító lekérdezése
+     * 
+     * @return string
+     */
     public function getMessageId()
     {
         return $this->_messageId;
     }
     
+    /**
+     * Kérés helyességének ellenőrzése
+     * 
+     * @return bool
+     */
     public function isValid()
     {
         return Constants::VERSION === $this->_version
@@ -53,6 +88,12 @@ class Request implements \fw\rpc\Request
             && is_array($this->_parameters);
     }
     
+    /**
+     * Válasz dekódolása a átviteli formátumról (JSON)
+     * 
+     * @param  string  nyers átviteli adat
+     * @return void
+     */
     public function decode($rawData)
     {
         if ('[]' === $rawData)

@@ -2,18 +2,35 @@
 
 namespace fw;
 
+/**
+ * Munkamenet-kezelő
+ * 
+ * @author Karácsony Máté
+ */
 class SessionManager
 {
     const VAR_LOGGED_IN  = '__loggedIn';
     const VAR_CLIENT_IP  = '__clientIp';
     const VAR_USER_AGENT = '__userAgent';
     
+    /**
+     * Elindítja vagy folytatja az adott nevű munkamenetet
+     * 
+     * @param  string  a munkamenet neve
+     * @return void
+     */
     public static function start($sessionName)
     {
         session_name($sessionName);
         @session_start();
     }
     
+    /**
+     * Bejelentkezettnek jelöli meg az aktuális munkamenetet,
+     * és kliens információkkal tölti fel a későbbi ellenőrzéshez
+     *
+     * @return void
+     */
     public static function login()
     {
         session_regenerate_id();
@@ -23,6 +40,11 @@ class SessionManager
         $_SESSION[self::VAR_USER_AGENT] = Utils::getUserAgent();
     }
     
+    /**
+     * Ellenőrzi, hogy érvényes-e az aktuális bejelentkezett munkamenet
+     * 
+     * @return bool
+     */
     public static function isValid()
     {
         $loggedIn = isset($_SESSION[self::VAR_LOGGED_IN])
@@ -37,6 +59,11 @@ class SessionManager
         return $loggedIn && $sameClientIp && $sameUserAgent;
     }
     
+    /**
+     * Megszűnteti és törli az aktuális munkamenetet
+     * 
+     * @return void
+     */
     public static function destroy()
     {
         $_SESSION = array();

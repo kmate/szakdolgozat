@@ -2,12 +2,24 @@
 
 namespace fw\rpc\json;
 
+/**
+ * Távoli eljáráshívás hiba-objektum (JSON-RPC 2.0)
+ * 
+ * @author Karácsony Máté
+ */
 class Error
 {
     public $code;
     public $message;
     public $data;
     
+    /**
+     * Hiba-objektumot készít a megadott kód, üzenet és kitöltő-adat alapján
+     * 
+     * @param  int    a hiba kódja
+     * @param  string üzenet
+     * @param  mixed  kitöltő-adat
+     */
     public function __construct($code = 0, $message = '', $data = null)
     {
         $this->code    = $code;
@@ -15,6 +27,13 @@ class Error
         $this->data    = $data;
     }
     
+    /**
+     * Hiba-objektumot készít a megadott kód és kitöltő-adat alapján (gyártó függvény)
+     * 
+     * @param  int    a hiba kódja
+     * @param  mixed  kitöltő-adat
+     * @return Error
+     */
     public static function create($code, $data = null)
     {
         switch ($code)

@@ -2,12 +2,24 @@
 
 namespace fw\rpc\json;
 
+/**
+ * Távoli eljáráshívási válasz (JSON-RPC 2.0)
+ * 
+ * @author Karácsony Máté
+ */
 class Response implements \fw\rpc\Response
 {
     private $_result;
     private $_error;
     private $_messageId;
     
+    /**
+     * Új válasz-objektumot hoz létre a megadott tartalommal
+     * 
+     * @param mixed   eljáráshívás eredménye
+     * @param Error   hiba-objektum
+     * @param string  üzenet-azonosító
+     */
     public function __construct($result = null, Error $error = null, $messageId = null)
     {
         $this->setResult($result);
@@ -15,11 +27,22 @@ class Response implements \fw\rpc\Response
         $this->setMessageId($messageId);
     }
     
+    /**
+     * Eredmény lekérdezése
+     * 
+     * @return mixed
+     */
     public function getResult()
     {
         return $this->_result;
     }
     
+    /**
+     * Eredmény beállítása
+     * 
+     * @param  mixed  az új eredmény
+     * @return void
+     */
     public function setResult($result)
     {
         if (null != $result)
@@ -29,11 +52,22 @@ class Response implements \fw\rpc\Response
         $this->_result = $result;
     }
     
+    /**
+     * Hiba-objektum lekérdezése
+     * 
+     * @return Error
+     */
     public function getError()
     {
         return $this->_error;
     }
     
+    /**
+     * Hiba-objektum beállítása
+     * 
+     * @param  Error  az új hiba-objektum
+     * @return void
+     */
     public function setError(Error $error = null)
     {
         if (null != $error)
@@ -43,16 +77,32 @@ class Response implements \fw\rpc\Response
         $this->_error = $error;
     }
     
+    /**
+     * Üzenet-azonosító lekérdezése
+     * 
+     * @return string
+     */
     public function getMessageId()
     {
         return $this->_messageId;
     }
     
+    /**
+     * Üzenet-azonosító beállítása
+     * 
+     * @param  string  az új üzenet-azonosító
+     * @return void
+     */
     public function setMessageId($messageId)
     {
         $this->_messageId = $messageId;
     }
     
+    /**
+     * Válasz kódolása a átviteli formátumra (JSON)
+     * 
+     * @return string
+     */
     public function encode()
     {
         $responseData = new \stdClass();

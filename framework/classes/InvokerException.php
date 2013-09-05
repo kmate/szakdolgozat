@@ -2,6 +2,11 @@
 
 namespace fw;
 
+/**
+ * Az önelemzésen keresztüli metódushívás által dobott kivételek osztálya
+ * 
+ * @author Karácsony Máté
+ */
 class InvokerException extends Exception
 {
     const MISSING_CLASS          = 1;

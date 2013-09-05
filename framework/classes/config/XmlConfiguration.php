@@ -2,6 +2,11 @@
 
 namespace fw\config;
 
+/**
+ * XML-formátumú fájl konfiguráció
+ * 
+ * @author Karácsony Máté
+ */
 class XmlConfiguration extends FileBasedConfiguration
 {
     const SECTION_ATTRIBUTE_NAME     = 'name';

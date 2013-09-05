@@ -2,6 +2,11 @@
 
 namespace fw\rpc;
 
+/**
+ * Távoli eljáráshívás kivételek ősosztálya
+ * 
+ * @author Karácsony Máté
+ */
 class Exception extends \fw\Exception
 {
     const PARSE_ERROR      = 1;
@@ -10,6 +15,13 @@ class Exception extends \fw\Exception
     const INVALID_PARAMS   = 4;
     const INTERNAL_ERROR   = 5;
     
+    /**
+     * Kivételt készít a megadott kód és előzmény-kivétel alapján (gyártó függvény)
+     * 
+     * @param  int         a kivétel kódja
+     * @param  \Exception  előzmény-kivétel
+     * @return Exception
+     */
     public static function create($code, \Exception $cause = null)
     {
         switch ($code)

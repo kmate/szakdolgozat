@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen; http://apigen.org" />
+	<title>Class fw\view\ViewUtils</title>
+
+	<link rel="stylesheet" href="resources/style.css?v=2011051419" type="text/css" media="all" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />	<script type="text/javascript" src="resources/combined.js"></script>
+	<script type="text/javascript" src="allclasses.js"></script>
+</head>
+
+<body>
+<div id="left">
+	<a href="allclasses.html">All Classes</a>
+
+	<h3>Namespaces</h3>
+	<ul>
+		<li><a href="namespace-fw.html">fw</a>
+		</li>
+		<li><a href="namespace-fw.config.html">fw\config</a>
+		</li>
+		<li><a href="namespace-fw.control.html">fw\control</a>
+		<ul>
+		<li><a href="namespace-fw.control.hooks.html">fw\control\hooks</a>
+		</ul></li>
+		<li><a href="namespace-fw.input.html">fw\input</a>
+		</li>
+		<li><a href="namespace-fw.log.html">fw\log</a>
+		</li>
+		<li><a href="namespace-fw.rpc.html">fw\rpc</a>
+		<ul>
+		<li><a href="namespace-fw.rpc.json.html">fw\rpc\json</a>
+		</ul></li>
+		<li class="active"><a href="namespace-fw.view.html">fw\view</a>
+		</li>
+		<li><a href="namespace-PHP.html">PHP</a>
+		</li>
+	</ul>
+
+	<hr />
+
+	<h3>Classes</h3>
+
+	<ul>
+		<li><a href="fw.view.Template.html">Template</a></li>
+
+		<li><a href="fw.view.TemplateView.html">TemplateView</a></li>
+
+		<li><a href="fw.view.View.html">View</a></li>
+
+		<li class="active"><a href="fw.view.ViewUtils.html">ViewUtils</a></li>
+
+	</ul>
+
+	<h3>Interfaces</h3>
+
+	<ul>
+	</ul>
+
+	<h3>Exceptions</h3>
+
+	<ul>
+		<li><a href="fw.view.Exception.html">Exception</a></li>
+
+		<li><a href="fw.view.TemplateException.html">TemplateException</a></li>
+
+	</ul>
+</div>
+
+<div id="right">
+	<form action="http://www.google.com/cse" id="search" onsubmit="if(this.q.value.indexOf('more:')==-1)this.q.value+=' more:api'">
+		<input type="hidden" name="cx" value="011549293477758430224:vxofa9ufnhc" /><input type="hidden" name="ie" value="UTF-8" /><input type="text" name="q" class="text" /><input type="submit" value="Search" />
+	</form>
+
+<div id="navigation">
+	<ul>
+		<li><a href="overview.html" title="Summary of all namespaces">Overview</a></li>		<li><a href="namespace-fw.view.html" title="Summary of fw\view">Namespace</a></li>
+		<li class="active">Class</li>
+		<li><a href="elements.html">Elements</a></li>
+	</ul>
+</div>
+
+<div id="content">
+	<div id="classSummary">		<p>namespace <a href="namespace-fw.view.html">fw\view</a></p>
+
+		<h1>Class ViewUtils</h1>
+		<div class="classDescription">
+
+		
+<p>Nézet-segédfüggvények</p>
+
+		</div>
+
+		<div class="classInfo">
+			
+				<b>Author:</b> Karácsony Máté<br />
+			<b>Located at</b> <a href="source-view.ViewUtils.php.html#8">/view/ViewUtils.php</a><br />
+		</div>
+	</div>
+
+	<div id="methodSummary">
+
+		<table class="summary">
+		<caption>Method Summary</caption>
+		<tr data-order="0 setRouter" id="_setRouter">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public static
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_setRouter">#</a>
+			<code class="nowrap">
+				<a href="source-view.ViewUtils.php.html#17" title="go to source code"><b>setRouter</b></a>(
+					<a href="fw.control.Router.html">fw\control\Router</a>
+					
+					<var>$router</var>
+			)</code>
+
+			<div class="short">
+				
+<p>Beállítja a link-generáláshoz használt útválasztót</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Beállítja a link-generáláshoz használt útválasztót</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$router</code> Router a link-generáláshoz használandó útválasztó<br />
+					</div>
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="0 generateLink" id="_generateLink">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public static
+				string
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_generateLink">#</a>
+			<code class="nowrap">
+				<a href="source-view.ViewUtils.php.html#28" title="go to source code"><b>generateLink</b></a>(
+					string
+					<var>$controllerName</var>, 
+					string
+					<var>$actionName</var>, 
+					array
+					
+					<var>$parameters</var> = <span class="php-keyword1">array</span> (
+)
+			)</code>
+
+			<div class="short">
+				
+<p>Linket generál egy vezérlő megadott akciójához, a kivánt
+paraméterekkel</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Linket generál egy vezérlő megadott akciójához, a kivánt
+paraméterekkel</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$controllerName</code> string vezérlő neve<br />
+						<code>$actionName</code> string vezérlő-akció neve<br />
+						<code>$parameters</code> array paraméterek<br />
+					</div>
+
+					<h4>Returns</h4>
+					<div class="smallList">string a generált link</div>
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="0 getBaseHref" id="_getBaseHref">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public static
+				string
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_getBaseHref">#</a>
+			<code class="nowrap">
+				<a href="source-view.ViewUtils.php.html#43" title="go to source code"><b>getBaseHref</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Lekéri az alkalmazás relatív hivatkozásainak viszonyítási pontjául
+szolgáló URL-t</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Lekéri az alkalmazás relatív hivatkozásainak viszonyítási pontjául
+szolgáló URL-t</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="smallList">string </div>
+
+
+			</div>
+			</td>
+		</tr>
+
+
+		</table>
+	</div>
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Framework generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</body>
+</html>

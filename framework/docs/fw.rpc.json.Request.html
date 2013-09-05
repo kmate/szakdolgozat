@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen; http://apigen.org" />
+	<title>Class fw\rpc\json\Request</title>
+
+	<link rel="stylesheet" href="resources/style.css?v=2011051419" type="text/css" media="all" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />	<script type="text/javascript" src="resources/combined.js"></script>
+	<script type="text/javascript" src="allclasses.js"></script>
+</head>
+
+<body>
+<div id="left">
+	<a href="allclasses.html">All Classes</a>
+
+	<h3>Namespaces</h3>
+	<ul>
+		<li><a href="namespace-fw.html">fw</a>
+		</li>
+		<li><a href="namespace-fw.config.html">fw\config</a>
+		</li>
+		<li><a href="namespace-fw.control.html">fw\control</a>
+		<ul>
+		<li><a href="namespace-fw.control.hooks.html">fw\control\hooks</a>
+		</ul></li>
+		<li><a href="namespace-fw.input.html">fw\input</a>
+		</li>
+		<li><a href="namespace-fw.log.html">fw\log</a>
+		</li>
+		<li><a href="namespace-fw.rpc.html">fw\rpc</a>
+		<ul>
+		<li class="active"><a href="namespace-fw.rpc.json.html">fw\rpc\json</a>
+		</ul></li>
+		<li><a href="namespace-fw.view.html">fw\view</a>
+		</li>
+		<li><a href="namespace-PHP.html">PHP</a>
+		</li>
+	</ul>
+
+	<hr />
+
+	<h3>Classes</h3>
+
+	<ul>
+		<li><a href="fw.rpc.json.Constants.html">Constants</a></li>
+
+		<li><a href="fw.rpc.json.Error.html">Error</a></li>
+
+		<li class="active"><a href="fw.rpc.json.Request.html">Request</a></li>
+
+		<li><a href="fw.rpc.json.Response.html">Response</a></li>
+
+		<li><a href="fw.rpc.json.Server.html">Server</a></li>
+
+	</ul>
+
+	<h3>Interfaces</h3>
+
+	<ul>
+	</ul>
+
+	<h3>Exceptions</h3>
+
+	<ul>
+	</ul>
+</div>
+
+<div id="right">
+	<form action="http://www.google.com/cse" id="search" onsubmit="if(this.q.value.indexOf('more:')==-1)this.q.value+=' more:api'">
+		<input type="hidden" name="cx" value="011549293477758430224:vxofa9ufnhc" /><input type="hidden" name="ie" value="UTF-8" /><input type="text" name="q" class="text" /><input type="submit" value="Search" />
+	</form>
+
+<div id="navigation">
+	<ul>
+		<li><a href="overview.html" title="Summary of all namespaces">Overview</a></li>		<li><a href="namespace-fw.rpc.json.html" title="Summary of fw\rpc\json">Namespace</a></li>
+		<li class="active">Class</li>
+		<li><a href="elements.html">Elements</a></li>
+	</ul>
+</div>
+
+<div id="content">
+	<div id="classSummary">		<p>namespace <a href="namespace-fw.rpc.json.html">fw\rpc\json</a></p>
+
+		<h1>Class Request</h1>
+		<div class="classDescription">
+
+		
+<p>Távoli eljáráshívási kérés (JSON-RPC 2.0)</p>
+
+		</div>
+		<dl class="tree">
+
+			<dd style="padding-left:0px"><b>fw\rpc\json\Request</b>				 implements <a href="fw.rpc.Request.html">fw\rpc\Request</a>
+			</dd>
+		</dl>
+
+		<div class="classInfo">
+			
+				<b>Author:</b> Karácsony Máté<br />
+			<b>Located at</b> <a href="source-rpc.json.Request.php.html#5">/rpc/json/Request.php</a><br />
+		</div>
+	</div>
+
+	<div id="methodSummary">
+
+		<table class="summary">
+		<caption>Method Summary</caption>
+		<tr data-order="1 __construct" id="___construct">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#___construct">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.json.Request.php.html#17" title="go to source code"><b>__construct</b></a>(
+					string
+					<var>$version</var> = <span class="php-quote">'2.0'</span>, 
+					string
+					<var>$method</var> = <span class="php-quote">''</span>, 
+					array
+					
+					<var>$parameters</var> = <span class="php-keyword1">array</span> (
+), 
+					string
+					<var>$messageId</var> = <span class="php-keyword1">NULL</span>
+			)</code>
+
+			<div class="short">
+				
+<p>Új kérés-objektumot hoz létre a megadott tartalommal</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Új kérés-objektumot hoz létre a megadott tartalommal</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$version</code> string verzió<br />
+						<code>$method</code> string metódusnév<br />
+						<code>$parameters</code> array hívási paraméterek<br />
+						<code>$messageId</code> string üzenet-azonosító<br />
+					</div>
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 getVersion" id="_getVersion">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_getVersion">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.json.Request.php.html#38" title="go to source code"><b>getVersion</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Verzió lekérdezése</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Verzió lekérdezése</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="smallList">string </div>
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 getMethod" id="_getMethod">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_getMethod">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.json.Request.php.html#48" title="go to source code"><b>getMethod</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Hívandó metódus lekérdezése</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Hívandó metódus lekérdezése</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="smallList">string </div>
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 getParameters" id="_getParameters">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_getParameters">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.json.Request.php.html#58" title="go to source code"><b>getParameters</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Hívási paraméterek lekérdezése</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Hívási paraméterek lekérdezése</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="smallList">string </div>
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 getMessageId" id="_getMessageId">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_getMessageId">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.json.Request.php.html#68" title="go to source code"><b>getMessageId</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Üzenet-azonosító lekérdezése</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Üzenet-azonosító lekérdezése</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="smallList">string </div>
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 isValid" id="_isValid">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				bool
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_isValid">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.json.Request.php.html#78" title="go to source code"><b>isValid</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Kérés helyességének ellenőrzése</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Kérés helyességének ellenőrzése</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="smallList">bool </div>
+
+
+					<h4>Implementation of</h4>
+					<div class="smallList"><code><a href="fw.rpc.Request.html#_isValid">fw\rpc\Request::isValid</a></code></div>
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 decode" id="_decode">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_decode">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.json.Request.php.html#91" title="go to source code"><b>decode</b></a>(
+					string
+					<var>$rawData</var>
+			)</code>
+
+			<div class="short">
+				
+<p>Válasz dekódolása a átviteli formátumról (JSON)</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Válasz dekódolása a átviteli formátumról (JSON)</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$rawData</code> string nyers átviteli adat<br />
+					</div>
+
+
+
+					<h4>Implementation of</h4>
+					<div class="smallList"><code><a href="fw.rpc.Request.html#_decode">fw\rpc\Request::decode</a></code></div>
+			</div>
+			</td>
+		</tr>
+
+
+		</table>
+	</div>
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Framework generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</body>
+</html>

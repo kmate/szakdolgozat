@@ -23,7 +23,7 @@ class StringValidatorTest extends PHPUnit_Framework_TestCase
     /**
      * @dataProvider stringsDataProvider
      */
-    public function testAcceptsOnlyStrings($isValid, $value)
+    public function testAcceptsStringsOnly($isValid, $value)
     {
         $this->assertEquals($isValid, $this->_validator->validate($value));
     }

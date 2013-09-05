@@ -7,11 +7,22 @@ use \ReflectionException;
 use \ReflectionMethod;
 use \ReflectionParameter;
 
+/**
+ * Példányosítás és metódushívás önelemzésen keresztül
+ * 
+ * @author Karácsony Máté
+ */
 class Invoker
 {
     private $_classInfo;
     private $_instance;
     
+    /**
+     * Példányosítja a megadott osztályt a kívánt konstruktor paraméterekkel
+     * 
+     * @param string  a példányosítandó osztály neve
+     * @param array   a példányosítandó osztály konstruktor paraméterei
+     */
     public function __construct($className, array $constructorArguments = array())
     {
         try
@@ -37,6 +48,13 @@ class Invoker
         }
     }
     
+    /**
+     * Ellenőrzi, hogy a vizsgált osztály implementálja-e a megadott interfészt
+     * 
+     * @param  string            az ellenőrizendő interfész teljesen minősített neve
+     * @return void
+     * @throws InvokerException  a megadott interfészt nem implementálja
+     */
     public function checkInterface($interfaceName)
     {
         if (!$this->_classInfo->implementsInterface($interfaceName))
@@ -48,6 +66,13 @@ class Invoker
         }
     }
     
+    /**
+     * Ellenőrzi, hogy a vizsgált osztály leszármazottja-e a megadottnak
+     * 
+     * @param  string            az ellenőrizendő ősosztály teljesen minősített neve
+     * @return void
+     * @throws InvokerException  a megadott osztálynak nem leszármazottja
+     */
     public function checkParentClass($parentClassName)
     {
         if (!$this->_classInfo->isSubclassOf($parentClassName))
@@ -59,6 +84,14 @@ class Invoker
         }
     }
     
+    /**
+     * Metódushívást végez, és visszatér az eredménnyel
+     * 
+     * @param  string            a meghívni kívánt metódus neve
+     * @param  array             a meghívni kívánt metódus paraméterei
+     * @return mixed             a metódushívás eredménye
+     * @throws InvokerException  sikertelen meródushívás
+     */
     public function invoke($methodName, array $arguments = array())
     {
         try
@@ -78,11 +111,26 @@ class Invoker
         }
     }
     
+    /**
+     * Lekérdezi a megnevezett metódus önelemzési információit tartalmazó struktúrát
+     * 
+     * @param  string               a lekérdezni kívánt metódus neve
+     * @return ReflectionMethod
+     * @throws ReflectionException  nem létező metódus
+     */
     public function getMethod($methodName)
     {
         return new ReflectionMethod($this->_instance, $methodName);
     }
     
+    /**
+     * Paramétertömb ellenőrzését és illesztését végzi
+     * 
+     * @param  array             az illesztendő paraméterek
+     * @param  ReflectionMethod  az illesztés alapját képző metódus-információk
+     * @return array             az illesztett paraméterek
+     * @throws InvokerException  a paraméterek nem illeszkednek 
+     */
     public function matchArguments(array $arguments = array(), ReflectionMethod $method)
     {
         $methodName = $method->getName();

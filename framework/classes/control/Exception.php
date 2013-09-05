@@ -2,6 +2,11 @@
 
 namespace fw\control;
 
+/**
+ * Vezérlési osztályok kivétele
+ * 
+ * @author Karácsony Máté
+ */
 class Exception extends \fw\Exception
 {
     const MISSING_CONTROLLER_CLASS       = 1;

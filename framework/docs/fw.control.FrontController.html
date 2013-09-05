@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen; http://apigen.org" />
+	<title>Class fw\control\FrontController</title>
+
+	<link rel="stylesheet" href="resources/style.css?v=2011051419" type="text/css" media="all" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />	<script type="text/javascript" src="resources/combined.js"></script>
+	<script type="text/javascript" src="allclasses.js"></script>
+</head>
+
+<body>
+<div id="left">
+	<a href="allclasses.html">All Classes</a>
+
+	<h3>Namespaces</h3>
+	<ul>
+		<li><a href="namespace-fw.html">fw</a>
+		</li>
+		<li><a href="namespace-fw.config.html">fw\config</a>
+		</li>
+		<li class="active"><a href="namespace-fw.control.html">fw\control</a>
+		<ul>
+		<li><a href="namespace-fw.control.hooks.html">fw\control\hooks</a>
+		</ul></li>
+		<li><a href="namespace-fw.input.html">fw\input</a>
+		</li>
+		<li><a href="namespace-fw.log.html">fw\log</a>
+		</li>
+		<li><a href="namespace-fw.rpc.html">fw\rpc</a>
+		<ul>
+		<li><a href="namespace-fw.rpc.json.html">fw\rpc\json</a>
+		</ul></li>
+		<li><a href="namespace-fw.view.html">fw\view</a>
+		</li>
+		<li><a href="namespace-PHP.html">PHP</a>
+		</li>
+	</ul>
+
+	<hr />
+
+	<h3>Classes</h3>
+
+	<ul>
+		<li><a href="fw.control.Context.html">Context</a></li>
+
+		<li><a href="fw.control.Controller.html">Controller</a></li>
+
+		<li class="active"><a href="fw.control.FrontController.html">FrontController</a></li>
+
+		<li><a href="fw.control.HttpContext.html">HttpContext</a></li>
+
+		<li><a href="fw.control.RouteInfo.html">RouteInfo</a></li>
+
+		<li><a href="fw.control.Router.html">Router</a></li>
+
+		<li><a href="fw.control.UrlRouter.html">UrlRouter</a></li>
+
+	</ul>
+
+	<h3>Interfaces</h3>
+
+	<ul>
+	</ul>
+
+	<h3>Exceptions</h3>
+
+	<ul>
+		<li><a href="fw.control.Exception.html">Exception</a></li>
+
+	</ul>
+</div>
+
+<div id="right">
+	<form action="http://www.google.com/cse" id="search" onsubmit="if(this.q.value.indexOf('more:')==-1)this.q.value+=' more:api'">
+		<input type="hidden" name="cx" value="011549293477758430224:vxofa9ufnhc" /><input type="hidden" name="ie" value="UTF-8" /><input type="text" name="q" class="text" /><input type="submit" value="Search" />
+	</form>
+
+<div id="navigation">
+	<ul>
+		<li><a href="overview.html" title="Summary of all namespaces">Overview</a></li>		<li><a href="namespace-fw.control.html" title="Summary of fw\control">Namespace</a></li>
+		<li class="active">Class</li>
+		<li><a href="elements.html">Elements</a></li>
+	</ul>
+</div>
+
+<div id="content">
+	<div id="classSummary">		<p>namespace <a href="namespace-fw.control.html">fw\control</a></p>
+
+		<h1>Class FrontController</h1>
+		<div class="classDescription">
+
+		
+<p>Fő vezérlő</p>
+
+		</div>
+
+		<div class="classInfo">
+			
+				<b>Author:</b> Karácsony Máté<br />
+			<b>Located at</b> <a href="source-control.FrontController.php.html#11">/control/FrontController.php</a><br />
+		</div>
+	</div>
+
+	<div id="methodSummary">
+
+		<table class="summary">
+		<caption>Method Summary</caption>
+		<tr data-order="1 __construct" id="___construct">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#___construct">#</a>
+			<code class="nowrap">
+				<a href="source-control.FrontController.php.html#36" title="go to source code"><b>__construct</b></a>(
+					<a href="fw.config.Configuration.html">fw\config\Configuration</a>
+					
+					<var>$config</var> = <span class="php-keyword1">NULL</span>
+			)</code>
+
+			<div class="short">
+				
+<p>Fő vezérlő létrehozásak, mely a megadott konfiguráció alapján
+beállítja saját osztálybetöltőjét</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Fő vezérlő létrehozásak, mely a megadott konfiguráció alapján
+beállítja saját osztálybetöltőjét<br>
+Az alábbi beállítások kerülnek feldolgozásra:</p>
+
+<ul>
+	<li>controller.classpath</li>
+
+	<li>controller.namespace</li>
+
+	<li>controller.pre_hooks</li>
+
+	<li>controller.post_hooks</li>
+</ul>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$config</code> Configuration konfiguráció<br />
+					</div>
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 __destruct" id="___destruct">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#___destruct">#</a>
+			<code class="nowrap">
+				<a href="source-control.FrontController.php.html#64" title="go to source code"><b>__destruct</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Osztálybetöltő megszűntetése</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Osztálybetöltő megszűntetése</p>
+
+
+
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 getConfiguration" id="_getConfiguration">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				Configuration
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_getConfiguration">#</a>
+			<code class="nowrap">
+				<a href="source-control.FrontController.php.html#73" title="go to source code"><b>getConfiguration</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Konfiguráció lekérdezése</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Konfiguráció lekérdezése</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="smallList">Configuration </div>
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 getLastException" id="_getLastException">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				<a href="Exception.html">Exception</a>
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_getLastException">#</a>
+			<code class="nowrap">
+				<a href="source-control.FrontController.php.html#83" title="go to source code"><b>getLastException</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Utolsó kivétel lekérdezése</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Utolsó kivétel lekérdezése</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="smallList"><a href="Exception.html">Exception</a> </div>
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 getRouter" id="_getRouter">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				<a href="fw.control.Router.html">Router</a>
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_getRouter">#</a>
+			<code class="nowrap">
+				<a href="source-control.FrontController.php.html#93" title="go to source code"><b>getRouter</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Útválasztó lekérdezése (alapértelmezett: UrlRouter)</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Útválasztó lekérdezése (alapértelmezett: UrlRouter)</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="smallList"><a href="fw.control.Router.html">Router</a> </div>
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 setRouter" id="_setRouter">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_setRouter">#</a>
+			<code class="nowrap">
+				<a href="source-control.FrontController.php.html#108" title="go to source code"><b>setRouter</b></a>(
+					<a href="fw.control.Router.html">Router</a>
+					
+					<var>$router</var>
+			)</code>
+
+			<div class="short">
+				
+<p>Útválasztó beállítása</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Útválasztó beállítása</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$router</code> <a href="fw.control.Router.html">Router</a> <br />
+					</div>
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 getContext" id="_getContext">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				<a href="fw.control.Context.html">Context</a>
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_getContext">#</a>
+			<code class="nowrap">
+				<a href="source-control.FrontController.php.html#121" title="go to source code"><b>getContext</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Vezérlési környezet lekérdezése (alapértelmezett: HttpContext)</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Vezérlési környezet lekérdezése (alapértelmezett: HttpContext)</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="smallList"><a href="fw.control.Context.html">Context</a> </div>
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 setContext" id="_setContext">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_setContext">#</a>
+			<code class="nowrap">
+				<a href="source-control.FrontController.php.html#136" title="go to source code"><b>setContext</b></a>(
+					<a href="fw.control.Context.html">Context</a>
+					
+					<var>$context</var>
+			)</code>
+
+			<div class="short">
+				
+<p>Vezérlési környezet beállítása</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Vezérlési környezet beállítása</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$context</code> <a href="fw.control.Context.html">Context</a> <br />
+					</div>
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 getControllerClassName" id="_getControllerClassName">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_getControllerClassName">#</a>
+			<code class="nowrap">
+				<a href="source-control.FrontController.php.html#148" title="go to source code"><b>getControllerClassName</b></a>(
+					<a href="fw.control.RouteInfo.html">RouteInfo</a>
+					
+					<var>$routeInfo</var>
+			)</code>
+
+			<div class="short">
+				
+<p>Vezérlő nevének kinyerése útvonal információból</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Vezérlő nevének kinyerése útvonal információból</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$routeInfo</code> <a href="fw.control.RouteInfo.html">RouteInfo</a> útvonal információ<br />
+					</div>
+
+					<h4>Returns</h4>
+					<div class="smallList">string </div>
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 getActionMethodName" id="_getActionMethodName">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_getActionMethodName">#</a>
+			<code class="nowrap">
+				<a href="source-control.FrontController.php.html#171" title="go to source code"><b>getActionMethodName</b></a>(
+					<a href="fw.control.RouteInfo.html">RouteInfo</a>
+					
+					<var>$routeInfo</var>
+			)</code>
+
+			<div class="short">
+				
+<p>Vezérlő-akció nevének kinyerése útvonal információból</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Vezérlő-akció nevének kinyerése útvonal információból</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$routeInfo</code> <a href="fw.control.RouteInfo.html">RouteInfo</a> útvonal információ<br />
+					</div>
+
+					<h4>Returns</h4>
+					<div class="smallList">string </div>
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 dispatch" id="_dispatch">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_dispatch">#</a>
+			<code class="nowrap">
+				<a href="source-control.FrontController.php.html#187" title="go to source code"><b>dispatch</b></a>(
+					string
+					<var>$route</var> = <span class="php-keyword1">NULL</span>
+			)</code>
+
+			<div class="short">
+				
+<p>Vezérlés végrehajtása a megadott nyers útvonalon</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Vezérlés végrehajtása a megadott nyers útvonalon<br>
+(ha nincs megadva, az útválasztó dönt)</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$route</code> string nyers útvonal<br />
+					</div>
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 forward" id="_forward">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_forward">#</a>
+			<code class="nowrap">
+				<a href="source-control.FrontController.php.html#211" title="go to source code"><b>forward</b></a>(
+					<a href="fw.control.RouteInfo.html">RouteInfo</a>
+					
+					<var>$routeInfo</var>
+			)</code>
+
+			<div class="short">
+				
+<p>Vezérlés belső átirányítása egy megadott útvonal információ
+szerint</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Vezérlés belső átirányítása egy megadott útvonal információ
+szerint</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$routeInfo</code> <a href="fw.control.RouteInfo.html">RouteInfo</a> útvonal információ<br />
+					</div>
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 forwardExternal" id="_forwardExternal">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_forwardExternal">#</a>
+			<code class="nowrap">
+				<a href="source-control.FrontController.php.html#226" title="go to source code"><b>forwardExternal</b></a>(
+					<a href="fw.control.RouteInfo.html">RouteInfo</a>
+					
+					<var>$routeInfo</var>
+			)</code>
+
+			<div class="short">
+				
+<p>Vezérlés külső átirányítása egy megadott útvonal információ
+szerint</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Vezérlés külső átirányítása egy megadott útvonal információ
+szerint</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$routeInfo</code> <a href="fw.control.RouteInfo.html">RouteInfo</a> útvonal információ<br />
+					</div>
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 forwardToDefault" id="_forwardToDefault">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_forwardToDefault">#</a>
+			<code class="nowrap">
+				<a href="source-control.FrontController.php.html#237" title="go to source code"><b>forwardToDefault</b></a>(
+					bool
+					<var>$external</var> = <span class="php-keyword1">false</span>
+			)</code>
+
+			<div class="short">
+				
+<p>Vezérlés átirányítása az alapértelmezett vezérlőre</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Vezérlés átirányítása az alapértelmezett vezérlőre</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$external</code> bool igaz érték esetén külső átirányítás, hamis esetén belső<br />
+					</div>
+
+
+
+			</div>
+			</td>
+		</tr>
+
+
+		</table>
+	</div>
+
+
+
+	<div id="constantSummary">
+
+		<table class="summary">
+		<caption>Constant Summary</caption>
+		<tr data-order="DEFAULT_CLASSPATH" id="DEFAULT_CLASSPATH">
+			<td align="right" width="1%"><code><b>DEFAULT_CLASSPATH</b></code></td>
+			<td><code><span class="php-quote">'C:\\Work\\htdocs\\szakdolgozat\\framework\\classes\\control'</span></code> <a href="#DEFAULT_CLASSPATH" class="anchor">#</a></td>
+		</tr>
+		<tr data-order="DEFAULT_NAMESPACE" id="DEFAULT_NAMESPACE">
+			<td align="right" width="1%"><code><b>DEFAULT_NAMESPACE</b></code></td>
+			<td><code><span class="php-quote">''</span></code> <a href="#DEFAULT_NAMESPACE" class="anchor">#</a></td>
+		</tr>
+		<tr data-order="CONTROLLER_SUFFIX" id="CONTROLLER_SUFFIX">
+			<td align="right" width="1%"><code><b>CONTROLLER_SUFFIX</b></code></td>
+			<td><code><span class="php-quote">'Controller'</span></code> <a href="#CONTROLLER_SUFFIX" class="anchor">#</a></td>
+		</tr>
+		<tr data-order="ACTION_SUFFIX" id="ACTION_SUFFIX">
+			<td align="right" width="1%"><code><b>ACTION_SUFFIX</b></code></td>
+			<td><code><span class="php-quote">'Action'</span></code> <a href="#ACTION_SUFFIX" class="anchor">#</a></td>
+		</tr>
+		</table>
+	</div>
+
+
+	<div id="propertySummary">
+
+		<table class="summary">
+		<caption>Property Summary</caption>
+		<tr data-order="_classLoader" id="$_classLoader">
+
+			<td align="right" width="1%"><code class="nowrap">
+				protected 
+				
+			</code></td>
+
+			<td width="1%"><var>$_classLoader</var></td>
+			<td><pre><span class="php-keyword1">NULL</span></pre></td>
+			<td> <a href="#$_classLoader" class="anchor">#</a></td>
+		</tr>
+
+		<tr data-order="_namespace" id="$_namespace">
+
+			<td align="right" width="1%"><code class="nowrap">
+				protected 
+				
+			</code></td>
+
+			<td width="1%"><var>$_namespace</var></td>
+			<td><pre><span class="php-keyword1">NULL</span></pre></td>
+			<td> <a href="#$_namespace" class="anchor">#</a></td>
+		</tr>
+
+		<tr data-order="_config" id="$_config">
+
+			<td align="right" width="1%"><code class="nowrap">
+				protected 
+				
+			</code></td>
+
+			<td width="1%"><var>$_config</var></td>
+			<td><pre><span class="php-keyword1">NULL</span></pre></td>
+			<td> <a href="#$_config" class="anchor">#</a></td>
+		</tr>
+
+		<tr data-order="_router" id="$_router">
+
+			<td align="right" width="1%"><code class="nowrap">
+				protected 
+				
+			</code></td>
+
+			<td width="1%"><var>$_router</var></td>
+			<td><pre><span class="php-keyword1">NULL</span></pre></td>
+			<td> <a href="#$_router" class="anchor">#</a></td>
+		</tr>
+
+		<tr data-order="_context" id="$_context">
+
+			<td align="right" width="1%"><code class="nowrap">
+				protected 
+				
+			</code></td>
+
+			<td width="1%"><var>$_context</var></td>
+			<td><pre><span class="php-keyword1">NULL</span></pre></td>
+			<td> <a href="#$_context" class="anchor">#</a></td>
+		</tr>
+
+		<tr data-order="_preHooks" id="$_preHooks">
+
+			<td align="right" width="1%"><code class="nowrap">
+				protected 
+				
+			</code></td>
+
+			<td width="1%"><var>$_preHooks</var></td>
+			<td><pre><span class="php-keyword1">NULL</span></pre></td>
+			<td> <a href="#$_preHooks" class="anchor">#</a></td>
+		</tr>
+
+		<tr data-order="_postHooks" id="$_postHooks">
+
+			<td align="right" width="1%"><code class="nowrap">
+				protected 
+				
+			</code></td>
+
+			<td width="1%"><var>$_postHooks</var></td>
+			<td><pre><span class="php-keyword1">NULL</span></pre></td>
+			<td> <a href="#$_postHooks" class="anchor">#</a></td>
+		</tr>
+
+		<tr data-order="_lastException" id="$_lastException">
+
+			<td align="right" width="1%"><code class="nowrap">
+				protected 
+				
+			</code></td>
+
+			<td width="1%"><var>$_lastException</var></td>
+			<td><pre><span class="php-keyword1">NULL</span></pre></td>
+			<td> <a href="#$_lastException" class="anchor">#</a></td>
+		</tr>
+
+		<tr data-order="_handlingNotFound" id="$_handlingNotFound">
+
+			<td align="right" width="1%"><code class="nowrap">
+				protected 
+				
+			</code></td>
+
+			<td width="1%"><var>$_handlingNotFound</var></td>
+			<td><pre><span class="php-keyword1">NULL</span></pre></td>
+			<td> <a href="#$_handlingNotFound" class="anchor">#</a></td>
+		</tr>
+
+
+		</table>
+	</div>
+
+
+</div>
+
+	<div id="footer">
+		Framework generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</body>
+</html>

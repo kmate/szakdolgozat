@@ -6,6 +6,11 @@ use \fw\SessionManager;
 use \fw\control\Context;
 use \fw\control\RouteInfo;
 
+/**
+ * Authentikációt kezelő vezérlés-kiegészítők ősosztálya
+ * 
+ * @author Karácsony Máté
+ */
 abstract class AuthenticationHook implements ControllerHook
 {
     const DEFAULT_LOGIN_CONTROLLER = 'default';
@@ -14,6 +19,20 @@ abstract class AuthenticationHook implements ControllerHook
     protected $_loginControllerName;
     protected $_loginActionName;
     
+    /**
+     * Munkamenet érvényesség-ellenőrzése
+     * 
+     * @param  Context  vezérlési környezet
+     * @return bool     érvényes-e az aktuális munkamenet
+     */
+    abstract public function validateSession(Context $context);
+    
+    /**
+     * Végrehajtás
+     * 
+     * @param  Context  vezérlési környezet
+     * @return void
+     */
     public function execute(Context $context)
     {
         $sessionName = $context->configuration->auth->get('session_name', '');
@@ -53,6 +72,4 @@ abstract class AuthenticationHook implements ControllerHook
              && 0 === strcmp($actionName,     $this->_loginActionName))
              || $isPublicRoute;
     }
-    
-    abstract public function validateSession(Context $context);
 }

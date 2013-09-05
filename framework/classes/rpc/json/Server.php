@@ -5,10 +5,20 @@ namespace fw\rpc\json;
 use \fw\Invoker;
 use \fw\InvokerException;
 
+/**
+ * Távoli eljáráshívás kiszolgáló (JSON-RPC 2.0)
+ * 
+ * @author Karácsony Máté
+ */
 class Server extends \fw\rpc\Server
 {
     const METHOD_PATTERN = '/^(?P<className>[a-zA-Z_][a-zA-Z0-9_]*)\.(?P<methodName>[a-zA-Z_][a-zA-Z0-9_]*)$/';
     
+    /**
+     * Kérés-objektum lekérdezése
+     * 
+     * @return Request
+     */
     public function getRequest()
     {
         if (null == parent::getRequest())
@@ -19,6 +29,11 @@ class Server extends \fw\rpc\Server
         return parent::getRequest();
     }
     
+    /**
+     * Válasz-objektum lekérdezése
+     * 
+     * @return Response
+     */
     public function getResponse()
     {
         if (null == parent::getResponse())
@@ -29,6 +44,13 @@ class Server extends \fw\rpc\Server
         return parent::getResponse();
     }
     
+    /**
+     * Kérés-objektum dekódolása és ellenőrzése
+     * 
+     * @param  string     a kérés átviteli formátumban
+     * @return void
+     * @throw  Exception  értelmezési hiba, vagy érvénytelen kérés
+     */
     protected function _decodeRequest($rawData)
     {
         try
@@ -45,6 +67,12 @@ class Server extends \fw\rpc\Server
         $this->getResponse()->setMessageId($this->getRequest()->getMessageId());
     }
     
+    /**
+     * Szolgáltatáshívás végrehajtása a kérés-ojektum felhasználásával
+     * 
+     * @return mixed      a hivás eredménye
+     * @throw  Exception  hívás közben keletkezett kivétel
+     */
     protected function _invokeService()
     {
         $methodExpression = $this->getRequest()->getMethod();
@@ -105,31 +133,62 @@ class Server extends \fw\rpc\Server
         }
     }
     
+    /**
+     * Szolgáltatáshívás eredményének beállítása a válasz-objektumon
+     * 
+     * @param  mixed  szolgáltatáshívás eredménye
+     * @return void
+     */
     protected function _applyInvokeResult($result)
     {
         $this->getResponse()->setResult($result);
     }
     
+    /**
+     * Kérés-objektum értelmezési hibáinak lekezelése
+     * 
+     * @return void
+     */
     protected function _handleParseError()
     {
         $this->getResponse()->setError(Error::create(Constants::PARSE_ERROR_CODE));
     }
     
+    /**
+     * Kérés-objektum egyéb hibáinak lekezelése
+     * 
+     * @return void
+     */
     protected function _handleInvalidRequest()
     {
         $this->getResponse()->setError(Error::create(Constants::INVALID_REQUEST_CODE));
     }
     
+    /**
+     * "Nem létező metódus" hiba lekezelése
+     * 
+     * @return void
+     */
     protected function _handleMethodNotFound()
     {
         $this->getResponse()->setError(Error::create(Constants::METHOD_NOT_FOUND_CODE));
     }
     
+    /**
+     * "Érvénytelen hívási paraméterek" hiba lekezelése
+     * 
+     * @return void
+     */
     protected function _handleInvalidParams()
     {
         $this->getResponse()->setError(Error::create(Constants::INVALID_PARAMS_CODE));
     }
     
+    /**
+     * Belső szolgáltatáshiba lekezelése
+     * 
+     * @return void
+     */
     protected function _handleInternalError()
     {
         $this->getResponse()->setError(Error::create(Constants::INTERNAL_ERROR_CODE));

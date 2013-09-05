@@ -2,6 +2,11 @@
 
 namespace fw\config;
 
+/**
+ * XML-konfiguráció kivétel
+ * 
+ * @author Karácsony Máté
+ */
 class XmlException extends Exception
 {
     const SCHEMA_VALIDATION_FAILED = 1;
@@ -15,6 +20,11 @@ class XmlException extends Exception
         parent::__construct($message, $code, $previous);
     }
     
+    /**
+     * XML-ellenőrzési hibák lekérése
+     * 
+     * @return array validálási hibák
+     */
     public function getValidationErrors()
     {
         return $this->_validationErrors;

@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen; http://apigen.org" />
+	<title>Class fw\rpc\Server</title>
+
+	<link rel="stylesheet" href="resources/style.css?v=2011051419" type="text/css" media="all" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />	<script type="text/javascript" src="resources/combined.js"></script>
+	<script type="text/javascript" src="allclasses.js"></script>
+</head>
+
+<body>
+<div id="left">
+	<a href="allclasses.html">All Classes</a>
+
+	<h3>Namespaces</h3>
+	<ul>
+		<li><a href="namespace-fw.html">fw</a>
+		</li>
+		<li><a href="namespace-fw.config.html">fw\config</a>
+		</li>
+		<li><a href="namespace-fw.control.html">fw\control</a>
+		<ul>
+		<li><a href="namespace-fw.control.hooks.html">fw\control\hooks</a>
+		</ul></li>
+		<li><a href="namespace-fw.input.html">fw\input</a>
+		</li>
+		<li><a href="namespace-fw.log.html">fw\log</a>
+		</li>
+		<li class="active"><a href="namespace-fw.rpc.html">fw\rpc</a>
+		<ul>
+		<li><a href="namespace-fw.rpc.json.html">fw\rpc\json</a>
+		</ul></li>
+		<li><a href="namespace-fw.view.html">fw\view</a>
+		</li>
+		<li><a href="namespace-PHP.html">PHP</a>
+		</li>
+	</ul>
+
+	<hr />
+
+	<h3>Classes</h3>
+
+	<ul>
+		<li class="active"><a href="fw.rpc.Server.html">Server</a></li>
+
+	</ul>
+
+	<h3>Interfaces</h3>
+
+	<ul>
+		<li><a href="fw.rpc.Request.html">Request</a></li>
+
+		<li><a href="fw.rpc.Response.html">Response</a></li>
+
+		<li><a href="fw.rpc.Service.html">Service</a></li>
+
+	</ul>
+
+	<h3>Exceptions</h3>
+
+	<ul>
+		<li><a href="fw.rpc.Exception.html">Exception</a></li>
+
+	</ul>
+</div>
+
+<div id="right">
+	<form action="http://www.google.com/cse" id="search" onsubmit="if(this.q.value.indexOf('more:')==-1)this.q.value+=' more:api'">
+		<input type="hidden" name="cx" value="011549293477758430224:vxofa9ufnhc" /><input type="hidden" name="ie" value="UTF-8" /><input type="text" name="q" class="text" /><input type="submit" value="Search" />
+	</form>
+
+<div id="navigation">
+	<ul>
+		<li><a href="overview.html" title="Summary of all namespaces">Overview</a></li>		<li><a href="namespace-fw.rpc.html" title="Summary of fw\rpc">Namespace</a></li>
+		<li class="active">Class</li>
+		<li><a href="elements.html">Elements</a></li>
+	</ul>
+</div>
+
+<div id="content">
+	<div id="classSummary">		<p>namespace <a href="namespace-fw.rpc.html">fw\rpc</a></p>
+
+		<h1>Class Server</h1>
+		<div class="classDescription">
+
+		
+<p>Absztrakt távoli eljáráshívás kiszolgáló</p>
+
+		</div>
+		<div>
+
+			<h4>Direct Known Subclasses</h4>
+			<a href="fw.rpc.json.Server.html">fw\rpc\json\Server</a>
+		</div>
+
+		<div class="classInfo">
+			<b>Abstract Class</b><br />
+				<b>Author:</b> Karácsony Máté<br />
+			<b>Located at</b> <a href="source-rpc.Server.php.html#8">/rpc/Server.php</a><br />
+		</div>
+	</div>
+
+	<div id="methodSummary">
+
+		<table class="summary">
+		<caption>Method Summary</caption>
+		<tr data-order="1 __construct" id="___construct">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#___construct">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.Server.php.html#25" title="go to source code"><b>__construct</b></a>(
+					<a href="fw.config.Configuration.html">fw\config\Configuration</a>
+					
+					<var>$config</var> = <span class="php-keyword1">NULL</span>
+			)</code>
+
+			<div class="short">
+				
+<p>Új kiszolgálót készít, mely a megadott konfiguráció alapján
+beállítja saját osztálybetöltőjét</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Új kiszolgálót készít, mely a megadott konfiguráció alapján
+beállítja saját osztálybetöltőjét<br>
+(rpc.services.classpath és rpc.services.namespace beállítások alapján)</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$config</code> Configuration konfiguráció<br />
+					</div>
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 __destruct" id="___destruct">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#___destruct">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.Server.php.html#47" title="go to source code"><b>__destruct</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Osztálybetöltő megszűntetése</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Osztálybetöltő megszűntetése</p>
+
+
+
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 getRequest" id="_getRequest">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				<a href="fw.rpc.Request.html">Request</a>
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_getRequest">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.Server.php.html#56" title="go to source code"><b>getRequest</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Kérés-objektum lekérdezése</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Kérés-objektum lekérdezése</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="smallList"><a href="fw.rpc.Request.html">Request</a> </div>
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 setRequest" id="_setRequest">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_setRequest">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.Server.php.html#66" title="go to source code"><b>setRequest</b></a>(
+					<a href="fw.rpc.Request.html">Request</a>
+					
+					<var>$request</var>
+			)</code>
+
+			<div class="short">
+				
+<p>Kérés-objektum beállítása</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Kérés-objektum beállítása</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$request</code> <a href="fw.rpc.Request.html">Request</a> az új kérés-objektum<br />
+					</div>
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 getResponse" id="_getResponse">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				<a href="fw.rpc.Response.html">Response</a>
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_getResponse">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.Server.php.html#77" title="go to source code"><b>getResponse</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Válasz-objektum lekérdezése</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Válasz-objektum lekérdezése</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="smallList"><a href="fw.rpc.Response.html">Response</a> </div>
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 setResponse" id="_setResponse">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_setResponse">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.Server.php.html#87" title="go to source code"><b>setResponse</b></a>(
+					<a href="fw.rpc.Response.html">Response</a>
+					
+					<var>$response</var>
+			)</code>
+
+			<div class="short">
+				
+<p>Válasz-objektum beállítása</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Válasz-objektum beállítása</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$response</code> <a href="fw.rpc.Response.html">Response</a> az új válasz-objektum<br />
+					</div>
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 handle" id="_handle">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#_handle">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.Server.php.html#98" title="go to source code"><b>handle</b></a>(
+					string
+					<var>$rawData</var>
+			)</code>
+
+			<div class="short">
+				
+<p>Kiszolgálja a megadott kérést</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Kiszolgálja a megadott kérést</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$rawData</code> string a kérés átviteli formátumban<br />
+					</div>
+
+					<h4>Returns</h4>
+					<div class="smallList">string a válasz átviteli formátumban</div>
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 _tryInvokeService" id="__tryInvokeService">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#__tryInvokeService">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.Server.php.html#115" title="go to source code"><b>_tryInvokeService</b></a>(
+			)</code>
+
+			<div class="short">
+				
+			</div>
+
+			<div class="detailed">
+				
+
+
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 _tryDecodeRequest" id="__tryDecodeRequest">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#__tryDecodeRequest">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.Server.php.html#144" title="go to source code"><b>_tryDecodeRequest</b></a>(
+					
+					<var>$rawData</var>
+			)</code>
+
+			<div class="short">
+				
+			</div>
+
+			<div class="detailed">
+				
+
+
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 _decodeRequest" id="__decodeRequest">
+
+			<td align="right" width="1%"><code class="nowrap">
+				 protected 
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#__decodeRequest">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.Server.php.html#170" title="go to source code"><b>_decodeRequest</b></a>(
+					string
+					<var>$rawData</var>
+			)</code>
+
+			<div class="short">
+				
+<p>Kérés-objektum dekódolása és ellenőrzése</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Kérés-objektum dekódolása és ellenőrzése</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$rawData</code> string a kérés átviteli formátumban<br />
+					</div>
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 _invokeService" id="__invokeService">
+
+			<td align="right" width="1%"><code class="nowrap">
+				abstract protected 
+				mixed
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#__invokeService">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.Server.php.html#188" title="go to source code"><b>_invokeService</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Szolgáltatáshívás végrehajtása a kérés-ojektum
+felhasználásával</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Szolgáltatáshívás végrehajtása a kérés-ojektum
+felhasználásával</p>
+
+
+
+
+					<h4>Returns</h4>
+					<div class="smallList">mixed a hivás eredménye</div>
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 _applyInvokeResult" id="__applyInvokeResult">
+
+			<td align="right" width="1%"><code class="nowrap">
+				abstract protected 
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#__applyInvokeResult">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.Server.php.html#196" title="go to source code"><b>_applyInvokeResult</b></a>(
+					mixed
+					<var>$result</var>
+			)</code>
+
+			<div class="short">
+				
+<p>Szolgáltatáshívás eredményének beállítása a válasz-objektumon</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Szolgáltatáshívás eredményének beállítása a válasz-objektumon</p>
+
+
+
+					<h4>Parameters</h4>
+					<div class="smallList">
+						<code>$result</code> mixed szolgáltatáshívás eredménye<br />
+					</div>
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 _handleParseError" id="__handleParseError">
+
+			<td align="right" width="1%"><code class="nowrap">
+				abstract protected 
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#__handleParseError">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.Server.php.html#204" title="go to source code"><b>_handleParseError</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Kérés-objektum értelmezési hibáinak lekezelése</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Kérés-objektum értelmezési hibáinak lekezelése</p>
+
+
+
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 _handleInvalidRequest" id="__handleInvalidRequest">
+
+			<td align="right" width="1%"><code class="nowrap">
+				abstract protected 
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#__handleInvalidRequest">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.Server.php.html#211" title="go to source code"><b>_handleInvalidRequest</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Kérés-objektum egyéb hibáinak lekezelése</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Kérés-objektum egyéb hibáinak lekezelése</p>
+
+
+
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 _handleMethodNotFound" id="__handleMethodNotFound">
+
+			<td align="right" width="1%"><code class="nowrap">
+				abstract protected 
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#__handleMethodNotFound">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.Server.php.html#218" title="go to source code"><b>_handleMethodNotFound</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>„Nem létező metódus“ hiba lekezelése</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>„Nem létező metódus“ hiba lekezelése</p>
+
+
+
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 _handleInvalidParams" id="__handleInvalidParams">
+
+			<td align="right" width="1%"><code class="nowrap">
+				abstract protected 
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#__handleInvalidParams">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.Server.php.html#225" title="go to source code"><b>_handleInvalidParams</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>„Érvénytelen hívási paraméterek“ hiba lekezelése</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>„Érvénytelen hívási paraméterek“ hiba lekezelése</p>
+
+
+
+
+
+
+			</div>
+			</td>
+		</tr>
+
+		<tr data-order="1 _handleInternalError" id="__handleInternalError">
+
+			<td align="right" width="1%"><code class="nowrap">
+				abstract protected 
+				void
+				
+				</code>
+			</td>
+
+			<td>
+			<a class="anchor" href="#__handleInternalError">#</a>
+			<code class="nowrap">
+				<a href="source-rpc.Server.php.html#232" title="go to source code"><b>_handleInternalError</b></a>(
+			)</code>
+
+			<div class="short">
+				
+<p>Belső szolgáltatáshiba lekezelése</p>
+
+			</div>
+
+			<div class="detailed">
+				
+<p>Belső szolgáltatáshiba lekezelése</p>
+
+
+
+
+
+
+			</div>
+			</td>
+		</tr>
+
+
+		</table>
+	</div>
+
+
+
+	<div id="constantSummary">
+
+		<table class="summary">
+		<caption>Constant Summary</caption>
+		<tr data-order="DEFAULT_CLASSPATH" id="DEFAULT_CLASSPATH">
+			<td align="right" width="1%"><code><b>DEFAULT_CLASSPATH</b></code></td>
+			<td><code><span class="php-quote">'C:\\Work\\htdocs\\szakdolgozat\\framework\\classes\\rpc'</span></code> <a href="#DEFAULT_CLASSPATH" class="anchor">#</a></td>
+		</tr>
+		<tr data-order="DEFAULT_NAMESPACE" id="DEFAULT_NAMESPACE">
+			<td align="right" width="1%"><code><b>DEFAULT_NAMESPACE</b></code></td>
+			<td><code><span class="php-quote">''</span></code> <a href="#DEFAULT_NAMESPACE" class="anchor">#</a></td>
+		</tr>
+		</table>
+	</div>
+
+
+	<div id="propertySummary">
+
+		<table class="summary">
+		<caption>Property Summary</caption>
+		<tr data-order="_classLoader" id="$_classLoader">
+
+			<td align="right" width="1%"><code class="nowrap">
+				protected 
+				
+			</code></td>
+
+			<td width="1%"><var>$_classLoader</var></td>
+			<td><pre><span class="php-keyword1">NULL</span></pre></td>
+			<td> <a href="#$_classLoader" class="anchor">#</a></td>
+		</tr>
+
+		<tr data-order="_namespace" id="$_namespace">
+
+			<td align="right" width="1%"><code class="nowrap">
+				protected 
+				
+			</code></td>
+
+			<td width="1%"><var>$_namespace</var></td>
+			<td><pre><span class="php-keyword1">NULL</span></pre></td>
+			<td> <a href="#$_namespace" class="anchor">#</a></td>
+		</tr>
+
+		<tr data-order="_config" id="$_config">
+
+			<td align="right" width="1%"><code class="nowrap">
+				protected 
+				
+			</code></td>
+
+			<td width="1%"><var>$_config</var></td>
+			<td><pre><span class="php-keyword1">NULL</span></pre></td>
+			<td> <a href="#$_config" class="anchor">#</a></td>
+		</tr>
+
+
+		</table>
+	</div>
+
+
+</div>
+
+	<div id="footer">
+		Framework generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</body>
+</html>

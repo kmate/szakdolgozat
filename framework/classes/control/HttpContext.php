@@ -5,6 +5,11 @@ namespace fw\control;
 use \fw\KeyValueStorage;
 use \fw\view\TemplateView;
 
+/**
+ * Vezérlési környezet HTTP protokollhoz
+ * 
+ * @author Karácsony Máté
+ */
 class HttpContext extends Context
 {
     protected $_getParameters;
@@ -16,16 +21,32 @@ class HttpContext extends Context
         $this->_postParameters = new KeyValueStorage($_POST);
     }
     
+    /**
+     * GET-paraméterek lekérdezése
+     * 
+     * @return KeyValueStorage
+     */
     public function getGetParameters()
     {
         return $this->_getParameters;
     }
     
+    /**
+     * POST-paraméterek lekérdezése
+     * 
+     * @return KeyValueStorage
+     */
     public function getPostParameters()
     {
         return $this->_postParameters;
     }
     
+    /**
+     * Útvonal információ beállítása
+     * 
+     * @param  RouteInfo
+     * @return void
+     */
     public function setRouteInfo(RouteInfo $routeInfo)
     {
         $this->getView()->setTemplatesByRouteInfo($routeInfo);
@@ -33,6 +54,11 @@ class HttpContext extends Context
         parent::setRouteInfo($routeInfo);
     }
     
+    /**
+     * Nézet lekérdezése
+     * 
+     * @return View
+     */
     public function getView()
     {
         if (null == $this->_view)
@@ -43,6 +69,12 @@ class HttpContext extends Context
         return parent::getView();
     }
     
+    /**
+     * Adattagok lekérdezése (alternatív szintaxis)
+     * 
+     * @param  string  adattag neve
+     * @return mixed
+     */
     public function __get($propertyName)
     {
         switch ($propertyName)

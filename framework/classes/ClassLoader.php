@@ -2,6 +2,11 @@
 
 namespace fw;
 
+/**
+ * Osztálybetöltő
+ * 
+ * @author Karácsony Máté
+ */
 class ClassLoader
 {
     private $_classPath;
@@ -9,6 +14,14 @@ class ClassLoader
     
     private $_registered;
     
+    /**
+     * Létrehoz egy osztálybetöltő példányt,
+     * és opcionálisan be is regisztrálja a betöltők láncába
+     * 
+     * @param string  a betöltendő osztályok fő névterének könyvtára
+     * @param string  a betöltendő osztályok fő névtere
+     * @param bool    automatikus regisztráció az osztálybetöltők láncába
+     */
     public function __construct(
         $classPath = __DIR__,
         $defaultNamespace = '',
@@ -23,6 +36,11 @@ class ClassLoader
         }
     }
     
+    /**
+     * Betöltő regisztrálása
+     * 
+     * @return void
+     */
     public function register()
     {
         if (!$this->_registered)
@@ -33,6 +51,12 @@ class ClassLoader
         }
     }
     
+    /**
+     * Betöltő regisztrációjának megszűntetése
+     * (hatástalanítja a betöltőt)
+     * 
+     * @return void
+     */
     public function unregister()
     {
         if ($this->_registered)
@@ -43,14 +67,21 @@ class ClassLoader
         }
     }
     
+    /**
+     * Elvégzi paraméterként megadott osztály betöltését,
+     * ha fő névtere egyezik a konstruktorban megadottal
+     *
+     * @param  string  a betöltendő osztály teljesen minősített neve
+     * @return void
+     */
     public function autoload($fullQualifiedClassName)
     {
-        if (!$this->classShouldBeLoaded($fullQualifiedClassName))
+        if (!$this->_classShouldBeLoaded($fullQualifiedClassName))
         {
             return;
         }
         
-        $filePath = $this->getPath($fullQualifiedClassName);
+        $filePath = $this->_getPath($fullQualifiedClassName);
         
         if (is_readable($filePath))
         {
@@ -58,12 +89,12 @@ class ClassLoader
         }
     }
     
-    private function classShouldBeLoaded($fullQualifiedClassName)
+    private function _classShouldBeLoaded($fullQualifiedClassName)
     {
         return 0 == strlen($this->_defaultNamespace) || 0 === strpos($fullQualifiedClassName, $this->_defaultNamespace);
     }
     
-    private function getPath($fullQualifiedClassName)
+    private function _getPath($fullQualifiedClassName)
     {
         $filePath = realpath($this->_classPath);
         $fileName = $fullQualifiedClassName;
