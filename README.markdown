@@ -1,5 +1,3 @@
-(Megjegyzés: a jelenleg feltöltött dokumentum hiányos, munkaközi állaptot tükröz.)
-
 Szakdolgozat
 ============
 
